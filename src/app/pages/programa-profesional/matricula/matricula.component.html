@@ -1,0 +1,267 @@
+<div
+  *ngIf="modalMatricula == false"
+  class="absolute mix-blend-multiply top-0 left-0 w-full max-w-screen min-h-screen flex justify-center back_menu z-index">
+</div>
+
+<div class="bg-close" (click)="closeMatricula()">
+  <div
+    class="top-0 registro_center left-0 flex justify-center z-index reposive_movil height_calc">
+
+    <div (mouseenter)="noCerrar()" (mouseleave)="noCerrar2()" class="login-main w-full md:w-[567px] grid_modal_content">
+      <div class="nav">
+        <div class="logo">
+          <div class="unacem">
+            <img
+              src="../../../../assets/svg/logo/imagen.svg"
+              style="width: 13px; height: 14px"
+            />
+            <img
+              src="../../../../assets/svg/logo/U-unacem.svg"
+              style="width: 7px; height: 8px; margin-left: 2px"
+            />
+            <img
+              src="../../../../assets/svg/logo/N-unacem.svg"
+              style="width: 7px; height: 8px"
+            />
+            <img
+              src="../../../../assets/svg/logo/A-unacem.svg"
+              style="width: 8px; height: 8px"
+            />
+            <img
+              src="../../../../assets/svg/logo/C-unacem.svg"
+              style="width: 8px; height: 8px"
+            />
+            <img
+              src="../../../../assets/svg/logo/E-unacem.svg"
+              style="width: 7px; height: 8px"
+            />
+            <img
+              src="../../../../assets/svg/logo/M-unacem.svg"
+              style="width: 8px; height: 8px"
+            />
+          </div>
+          <div class="cantera" style="display: flex; padding-top: 3px">
+            <img
+              src="../../../../assets/svg/logo/C-cantera.svg"
+              style="margin-right: -1px"
+            />
+            <img
+              src="../../../../assets/svg/logo/A-cantera.svg"
+              style="padding-right: 1.1px"
+            />
+            <img
+              src="../../../../assets/svg/logo/N-cantera.svg"
+              style="padding-right: 1.5px"
+            />
+            <img
+              src="../../../../assets/svg/logo/T-cantera.svg"
+              style="padding-right: 1px"
+            />
+            <img
+              src="../../../../assets/svg/logo/E-cantera.svg"
+              style="padding-right: 1.5px"
+            />
+            <img src="../../../../assets/svg/logo/R-cantera.svg" />
+            <img
+              src="../../../../assets/svg/logo/A-cantera.svg"
+              style="padding-left: -0.5px"
+            />
+          </div>
+        </div>
+      <button 
+        class="btn-cerrar">
+        <img (click)="closeMatriculaMovil()"
+          src="../../../../assets/icons/close-black.png"
+          alt="close"/>
+      </button>
+      </div>
+      <div
+        class="bg-gray-200 md:bg-white flex flex-col py-[52px] md:py-9 px-[43px] md:px-[107px] h-100 scroll-y"
+        id="custom-scroll">
+        <p style="margin-bottom: 20px;"
+          class="text-center mt-8 text-lg sm:text-2xl md:text-[14px] md:leading-5 md:mt-0">
+          Hola Maestro, bienvenido a UNACEM CANTERA. Déjanos tus datos y sé
+          parte de nuestro programa.
+        </p>
+        <form [formGroup]="formMatricula">
+          <div class="inputs">
+            <div class="mb-6 md:mb-[14px]">
+              <label for="name" class="text-xl sm:text-[28px] md:text-[15px]">
+                Nombres*
+              </label>
+              <input *ngIf="token != null"
+                readonly="true"
+                [(ngModel)]="nuevoPostula.nombres"
+                formControlName="nombres"
+                type="text"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+                <input *ngIf="token == null"
+                [(ngModel)]="nuevoPostula.nombres"
+                formControlName="nombres"
+                type="text"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+              <div *ngIf="formMatricula.controls['nombres'].invalid && (formMatricula.controls['nombres'].touched || formMatricula.controls['nombres'].dirty)" class="error">
+                <p *ngIf="formMatricula.controls['nombres'].errors?.['required']">
+                    El campo es requerido
+                </p>
+              </div>
+            </div>
+            <div class="mb-6 md:mb-[14px]">
+              <label
+                class="text-xl sm:text-[28px] md:text-[15px]">
+                Apellidos*
+              </label>
+                <input *ngIf="token != null"
+                readonly="true"
+                [(ngModel)]="nuevoPostula.apellidos"
+                formControlName="apellidos"
+                type="text"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+                <input *ngIf="token == null"
+                [(ngModel)]="nuevoPostula.apellidos"
+                formControlName="apellidos"
+                type="text"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+              <div *ngIf="formMatricula.controls['apellidos'].invalid && (formMatricula.controls['apellidos'].touched || formMatricula.controls['apellidos'].dirty)" class="error">
+                <p *ngIf="formMatricula.controls['apellidos'].errors?.['required']">
+                    El campo es requerido
+                </p>
+              </div>
+            </div>
+            <div class="mb-6 md:mb-[14px]">
+              <label 
+              class="text-xl sm:text-[28px] md:text-[15px]">
+                DNI*
+              </label>
+              <input
+              [(ngModel)]="nuevoPostula.dni"
+                formControlName="dni"
+                type="number"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+              <div *ngIf="formMatricula.controls['dni'].invalid && (formMatricula.controls['dni'].touched || formMatricula.controls['dni'].dirty)" class="error">
+                <p *ngIf="formMatricula.controls['dni'].errors?.['required']">
+                   El campo es requerido
+                </p>
+              </div>
+            </div>
+            <div class="mb-6 md:mb-[14px]">
+              <label
+                class="text-xl sm:text-[28px] md:text-[15px]">
+                Email*
+              </label>
+              <input *ngIf="token != null"
+                readonly="true"
+                [(ngModel)]="nuevoPostula.email"
+                formControlName="email"
+                type="text"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+              <input *ngIf="token == null"
+                [(ngModel)]="nuevoPostula.email"
+                formControlName="email"
+                type="text"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+              <div *ngIf="formMatricula.controls['email'].invalid && (formMatricula.controls['email'].touched || formMatricula.controls['email'].dirty)" class="error">
+                <p *ngIf="formMatricula.controls['email'].errors?.['required']">
+                    El campo es requerido
+                </p>
+                <p *ngIf="formMatricula.controls['email'].errors?.['pattern']">
+                  El campo solo admite tipo correo
+               </p>
+              </div>
+            </div>
+            <div class="mb-6 md:mb-[14px]">
+                <label
+                  class="text-xl sm:text-[28px] md:text-[15px]">
+                  Celular*
+                </label>
+                <input
+                [(ngModel)]="nuevoPostula.celular"
+                  formControlName="celular"
+                  type="number"
+                  class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+                <div *ngIf="formMatricula.controls['celular'].invalid && (formMatricula.controls['celular'].touched || formMatricula.controls['celular'].dirty)" class="error">
+                  <p *ngIf="formMatricula.controls['celular'].errors?.['required']">
+                      El campo es requerido
+                  </p>
+                </div>
+            </div>
+            <div class="mb-6 md:mb-[14px]">
+                <label
+                  class="text-xl sm:text-[28px] md:text-[15px]">
+                  Telefono*
+                </label>
+                <input
+                [(ngModel)]="nuevoPostula.telefono"
+                  formControlName="telefono"
+                  type="number"
+                  class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+                <div *ngIf="formMatricula.controls['telefono'].invalid && (formMatricula.controls['telefono'].touched || formMatricula.controls['telefono'].dirty)" class="error">
+                  <p *ngIf="formMatricula.controls['telefono'].errors?.['required']">
+                      El campo es requerido
+                  </p>
+                </div>
+            </div>
+            <div class="mb-6 md:mb-[14px]">
+                <label
+                  class="text-xl sm:text-[28px] md:text-[15px]">
+                  ¿Cu&aacute;l es su profesi&oacute;n, ocupaci&oacute;n principal actualmente?*
+                </label>
+                <select [(ngModel)]="nuevoPostula.ocupacion"
+                        formControlName="ocupacion"
+                        style="cursor: pointer;" class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2">
+                  <option>seleccione</option>
+                  <option value="Albañil/constructor">Albañil/constructor</option>
+                  <option value="Maestro/constructor">Maestro/constructor</option>
+                  <option value="Operario">Operario</option>
+                  <option value="Otros">Otros</option>
+                </select>
+            </div>
+            <div *ngIf="nuevoPostula.ocupacion == 'Otros'" class="mb-6 md:mb-[14px]">
+              <label
+                  class="text-xl sm:text-[28px] md:text-[15px]">
+                  Otra Ocupaci&oacute;n*
+              </label>
+              <input
+              [(ngModel)]="nuevoPostula.ocupacion_otros"
+              formControlName="ocupacion_otros"
+                type="text"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+            </div>
+            <div class="mb-6 md:mb-[14px]">
+                <label
+                  class="text-xl sm:text-[28px] md:text-[15px]">
+                  ¿Cu&aacute;ntos años de experiencia tiene usted en el rubro de la construcci&oacute;n?*
+                </label>
+                <select [(ngModel)]="nuevoPostula.experiencia"
+                        formControlName="experiencia"
+                        style="cursor: pointer;" class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2">
+                  <option value="1" >seleccione</option>
+                  <option value="Menos de 5 años">Menos de 5 años</option>
+                  <option value="De 5 a 9 años">De 5 a 9 años</option>
+                  <option value="De 10 a 15 años">De 10 a 15 años</option>
+                  <option value="De 16 a 20 años">De 16 a 20 años</option>
+                  <option value="Más de 20 años">Más de 20 años</option>
+                </select>
+            </div>
+          </div>
+          <a (click)="postular()"
+            style="background: #FF0000; color: white; cursor: pointer;"
+            class="boton-registro mt-[76px] md:mt-[30px] text-center text-white text-2xl sm:text-3xl md:text-base w-full rounded-[10px] py-3 md:border-2 
+            md:bg-white md:py-2 md:w-[240px] md:mx-auto block font-medium">
+            Postula
+          </a>
+        </form>
+        <div class="texto2">         
+          <p class="text-center text-xl sm:text-2xl mt-[27px] md:text-sm md:mt-[13px]">
+            Debes aceptar los
+            <a 
+              style="color: #FF0000"
+              class="underline font-bold text-2xl sm:text-[28px] md:text-sm">
+              T&eacute;rminos y condiciones
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

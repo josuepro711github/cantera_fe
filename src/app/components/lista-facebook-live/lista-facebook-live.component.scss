@@ -1,0 +1,61 @@
+.margin{
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+// .divframe{
+//     width: 600px;
+//     height: 270px;
+//     cursor: pointer;
+//   iframe{
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
+.imagen{
+  cursor: pointer;
+  height: 200px;
+  width: 100%;
+  filter: brightness(65%);
+  object-fit: cover;
+  //height: 30%;
+}
+
+.head-course{
+  display: grid;
+  grid-template-areas: "fecha fecha"
+                       "titulo titulo";
+  .date-course{
+    grid-area: fecha;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+  }                     
+  .title-course{  
+    grid-area: titulo;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 768px){
+  .head-course{
+    grid-template-columns: 70% auto;
+    grid-template-areas: "titulo fecha";
+    .date-course{
+      //border: 2px blue solid;
+      grid-area: fecha;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }                     
+    .title-course{  
+      //border: 2px red solid;
+      grid-area: titulo;
+      text-transform: uppercase;
+      padding-right: 20%;
+    }
+  }
+  .imagen{
+    height: 250px;
+  }
+}

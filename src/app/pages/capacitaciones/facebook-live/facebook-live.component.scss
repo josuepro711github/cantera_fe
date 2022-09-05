@@ -1,0 +1,75 @@
+*{
+    font-family: 'silka-medium';
+}
+.bg_facebook_live{
+    background-image: url("../../../../assets/img/facebook-live.png");
+    filter: brightness(65%);
+    z-index: -1;
+}
+.color{
+    color: #FF0000; 
+    border-color: #FF0000;
+}
+.titulo_curso{
+    //border: 2px solid greenyellow;
+    display: flex;
+    align-items: center;
+    background: red;
+    max-width: 65%;
+}
+.title{
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    h6{
+        font-size: 16px;
+    }
+    h1{
+        font-size: 44px;
+    }
+}
+.descripcion{
+    color: white;
+    font-size: 1.2rem;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+@media (min-width: 768px){
+    .descripcion{
+        color: white;
+        font-size: 1.2rem;
+        position: absolute;
+        padding-left: 40px;
+    }
+    .contenedor2{
+        align-items: center;
+        .descripcion{ 
+            p{
+                width: 100%;
+            }
+        }
+        img{
+            width: 70%;
+        }
+        .lupa{
+            margin-top: 80px;
+        }
+    }
+}
+@media (min-width: 1024px){
+    .contenedor2 .lupa{
+        margin-top: 0px;
+    }
+    .descripcion{
+        width: 65%;
+    }
+}
+
+
+

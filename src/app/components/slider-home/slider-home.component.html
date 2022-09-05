@@ -1,0 +1,129 @@
+<!-- <div class="dsc-slider" [ngStyle]="{'min-height': finalHeight}" (mouseover)="hover=true" (mouseleave)="hover=false" >
+    <div class="dsc-slider__btns" *ngIf="hover==true">
+        <div class="button1" (click)="setBack()">
+            <div class="BG"></div>
+            <span class="btn1"><i class="fa-solid fa-angle-left icon1"></i></span>
+        </div>
+        <div class="button2" (click)="setNext()">
+            <div class="BG"></div>
+            <span class="btn2"><i class="fa-solid fa-angle-right icon2"></i></span>
+        </div>    
+    </div>
+    <div class="dsc-slider__content" >
+        <ng-container *ngFor="let section of items;">
+            <div class="dsc-slider__content-item" [ngStyle]="{'background-image': 'url(' + section.image + ')',
+                                                              'margin-left': section.marginLeft + '%'}">           
+                <div class="dsc-slider__data">
+                    <h1> {{section.title}} </h1>
+                    <h3> {{section.name}} </h3>
+                    <p> {{section.rol}} </p>
+                    <p> {{section.dni}} </p> 
+                </div>
+            </div>
+            <button class="absolute bottom-[40px] right-[20px]">
+                <img src="../../../../assets/icons/play-bigger.png" alt="play" />
+            </button> 
+        </ng-container>
+    </div>
+
+    <div class="dsc-slider__steps">
+        <div 
+            class="dsc-slider__steps-step 
+            dsc-slider__steps-step-{{currentPosition === item.id ? 'active': ''}}" 
+            *ngFor="let item of items" (click)="setCurrentPosition(item.id)">
+        </div>
+    </div>
+</div>
+<div>
+</div>
+
+<div *ngFor="let section of items;">
+    <div class="dsc-slider__data-movil" *ngIf="currentPosition === section.id">
+            <h1> {{section.title}} </h1>
+        <div class="info">
+            <h3> {{section.name}} </h3>
+            <p> {{section.rol}} </p>
+            <p> {{section.dni}} </p> 
+        </div>
+    </div>  
+</div> -->
+
+<!-- FIN DE MI CODIGO SLIDER -->
+
+
+<!-- <div class="carousel">
+  <div class="carousel-inner">
+    <input
+      class="carousel-open"
+      type="radio"
+      id="carousel-1"
+      name="carousel"
+      aria-hidden="true"
+      hidden=""
+      checked="checked"
+    />
+    <div class="carousel-item">
+      <video
+        style="margin-left: 200px; width: 100% !important; margin-left: 0"
+        controls
+        autoplay
+        loop
+        src="../../../assets/vid/slider_video1.mp4"
+      ></video>
+    </div>
+    <input
+      class="carousel-open"
+      type="radio"
+      id="carousel-2"
+      name="carousel"
+      aria-hidden="true"
+      hidden=""
+    />
+    <div class="carousel-item">
+      <video
+        controls
+        style="margin-left: 200px; width: 100% !important; margin-left: 0"
+        loop
+        src="../../../assets/vid/slider_video2.mp4"
+      ></video>
+    </div>
+
+    <label
+      style="z-index: 1"
+      for="carousel-2"
+      class="carousel-control next control-1"
+      >›</label
+    >
+    <label
+      style="z-index: 1"
+      for="carousel-1"
+      class="carousel-control prev control-2"
+      >‹</label
+    >
+    <label
+      style="z-index: 1"
+      for="carousel-2"
+      class="carousel-control prev control-3"
+      >‹</label
+    >
+    <label
+      style="z-index: 1"
+      for="carousel-1"
+      class="carousel-control next control-3"
+      >›</label
+    >
+  </div>
+</div> -->
+
+<div style="position: relative;">
+  <video with controls controls [muted]="'muted'" width="100%" autoplay loop>
+    <source
+      src="../../../assets/vid/video_legacy.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <!-- <a routerLink="/public2/pre-home" class="logo_cantera_home">
+    <img src="../../../assets/svg/unacem-cantera-rojo.svg" alt="logo_cantera_rojo">
+  </a> -->
+</div>
+

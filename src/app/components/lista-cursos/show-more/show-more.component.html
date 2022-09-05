@@ -1,0 +1,6 @@
+{{ showMore ? curso.descripcion : (curso.descripcion | slice: 0:this.palabra) }}
+
+<span *ngIf="!showMore">...</span>
+<br>
+<a *ngIf="!showMore" style="color: white; cursor: pointer; font-weight: bold;" (click)="onShow()">Mostrar más</a>
+<a *ngIf="showMore" style="color: white; cursor: pointer; font-weight: bold;" (click)="onShow()">Mostrar menos</a>

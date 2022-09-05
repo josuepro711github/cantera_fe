@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div *ngIf="mostrar">
+<main *ngIf="paso==1" class="soluciones-herramientas">
+    <div class="relative">
+        <div class="banner bg_banner_soluciones bg-cover bg-no-repeat h-[330px] grid items-center"></div>
+        <a class="absolute top-[30px] left-[43px]" href="#"><img class="" src="../../../../assets/icons/arrow-left.png" alt="flecha"></a>
+        <div class="absolute title text-center text-white">
+            <h6 class="text-[16px] leading-[110%] mb-[20px] block">Soluciones constructivas</h6>
+            <h1 class="text-[44px] leading-[110%]">Herramientas</h1>
+        </div>
+    </div>   
+    <div class="text-description bg-white px-[50px] pt-[50px] pb-[90px] text-center md:pt-[40px] md:pb-[70px]">
+        <div class="bg-black w-[62px] h-[2px] mx-[0] mb-[40px] mx-auto md:mb-[30px]" style="margin: 0 auto; margin-bottom: 30px;"></div>
+        <p class="color-black text-[20px] leading-[160%] md:text-[15px]" style="font-weight: 500;">
+            Ponemos a tu disposición herramientas y soluciones útiles para el desarrollo y planificación de tus proyectos. 
+            <br>
+            <br>
+            *Recuerda que todo proyecto de construcción debe pasar por la supervisión de un ingeniero civil que 
+            <br>garantice y valide los procesos constructivos y la seguridad de la obra o proyecto.
+        </p>
+    </div>
+</main>
+<section *ngIf="paso==2" class="contenedor4" style="background: #EBEBEB; position: relative;">
+    <div (click)="regresar()" style="cursor: pointer; position: absolute; top: 30px; left: 27px;"><img src="../../../../assets/icons/arrow-left-black.png"></div>
+    <div class="cuerpo">
+        <div>
+            <!-- <div (click)="regresar()"><i class="fa-solid fa-arrow-left" style="font-size: 2rem; margin-bottom: 15px; cursor: pointer;"></i></div> -->
+            
+        <h1 class="titulo">Planos casas</h1>
+        <p class="parrafo-1" style="font-weight: 500; padding-top: 20px;">Con el objetivo de mejorar la calidad de las construcciones y combatir la construcción informal en el Perú, 
+            ponemos a tu alcance 3 planos de casas tipo con formatos de 1, 2 y 3 pisos*, los cuales tienen la característica
+            de ser sismo resistentes. En cada uno de estos planos encontrarás la distribución de los ambientes, los detalles
+            de construcción de cada parte del inmueble y las especificaciones técnicas a considerar.
+        </p>
+        </div>
+    </div>
+    
+    <div class="opciones" style="background: white;">
+        <div (click)="openPdf(piso1)" class="piso-1">
+            <img class="imagen" src="../../../../assets/svg/plano 1.svg" alt=""/>
+            <p class="texto">Plano de casas de 1 piso</p>
+            <div class="icono">
+                <i class=" fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <div (click)="openPdf(piso2)" class="piso-2">
+            <img class="imagen" src="../../../../assets/svg/plano 1.svg" alt=""/>
+            <p class="texto">Plano de casas de 2 piso</p>
+            <div class="icono">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <div (click)="openPdf(piso3)" class="piso-3">
+            <img class="imagen" src="../../../../assets/svg/plano 1.svg" alt=""/>
+            <p class="texto">Plano de casas de 3 piso</p>
+            <div class="icono">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <p class="parrafo-2" style="font-weight: 500;">*Los planos son referenciales, recuerda que es importante consultar con un ingeniero civil, 
+            ya que deben evaluar previamente las condiciones y características del terreno a construir.
+        </p>
+    </div>
+</section>
+<!-- componente herramientas-options -->
+<app-herramientas-options></app-herramientas-options>
+</div>
+<app-footer></app-footer>

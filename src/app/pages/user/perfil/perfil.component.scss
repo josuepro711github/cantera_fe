@@ -1,0 +1,27 @@
+*{
+    font-family: 'silka-medium';
+}
+.banner_profile{
+    background-image: url('../../../../assets/img/banner-profile.png');
+    filter: brightness(65%);
+}
+
+.title {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    h6 {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 44px;
+    }
+  }
+
+main h3, .style h4{
+    font-weight: 600;
+}

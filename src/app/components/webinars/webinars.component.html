@@ -1,0 +1,40 @@
+<div class="content-list">
+  <ul class="list-course px-[40px] pt-[30px] grid grid-cols-1 sm:grid-cols-2 gap-[35px] lg:grid-cols-3 lg:gap-[50px]">
+      <li *ngFor="let videos of items  | paginate: { itemsPerPage: numItemsAmostrar, currentPage: paginaActual }" class="item-course">
+          <div class="date-course text-[#C4C4C4] text-[14px] leading-[160%] md:text-[12px]">12 AGO 2022</div>
+          <div class="title-course-webinars text-[18px] text-white mt-[10px] mb-[20px]">
+              {{videos.subtitulo}}
+          </div>
+          <div class="curso">
+              <div class="titulo_curso">
+                  <h4>{{videos.titulo}}</h4>
+              </div>
+              <div class="bg-cover bg-no-repeat min-h-[185px] relative"
+                  [ngStyle]="{'background-image': 'url(' + videos.imagen + ')',
+                               'min-width': '35%'}">
+                  <a href="#" class="absolute right-[20px] bottom-[15px]">
+                  <img class="w-[58px] md:w-[38px]" src="../../../assets/icons/play.png" alt="play">
+                  </a>
+              </div>
+          </div>          
+          <div class="description-course text-[18px] text-white leading-[160%] mt-[20px] text-justify line-clamp-4 md:text-[14px] color">
+              {{videos.descripcion}}
+          </div>
+          <div *ngIf="token == null || token == undefined"  
+               class="inscription mt-[30px]">
+              <a href="http://localhost:8000/" class="btn-inscription-course rounded-[10px] flex max-w-[225px] py-[11px] items-center justify-center text-[20px] 
+              text-[#FF0000] border-[#FF0000] border-[1px] hover:bg-[#FF0000] hover:text-white md:text-[14px] md:max-w-[175px]">
+              Inscríbete aquí 
+              <i class="fa fa-angle-right ml-[20px]"></i>
+              </a>
+          </div>
+      </li>
+  </ul>
+  <div class="flex px-[40px] py-[40px] justify-between items-center md:max-w-[330px] md:mx-auto margin">
+      <!-- <a href="#"><img class="w-[27px]" src="../../../assets/icons/arrow-left.png" alt="anterior"></a> -->
+      
+      <pagination-controls (pageChange)="paginaActual = $event" previousLabel=""
+      nextLabel=""></pagination-controls>
+
+  </div>
+</div>

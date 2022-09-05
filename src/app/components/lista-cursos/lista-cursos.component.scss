@@ -1,0 +1,50 @@
+*{
+    font-family: 'silka-medium';
+}
+// .bg-fondo-curso{
+//     background-image: url("../../../assets/img/imagen_de_prueba.jpg");
+//     min-width: 35%;
+// }
+.curso{
+    display: flex;
+}
+.titulo_curso{
+    //border: 2px solid greenyellow;
+    display: flex;
+    align-items: center;
+    background: red;
+    max-width: 65%;
+}
+.titulo_curso h4{
+    text-align: center;
+    //border: 2px solid blue;
+    color: white;
+    font-size: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@media (max-width: 430px){
+    .titulo_curso h4{
+        font-size: 18px;
+        margin-left: 0;
+        margin-right: 0;
+    }  
+}
+@media (max-width: 390px){
+    .titulo_curso h4{
+        font-size: 16px;
+        margin-right: 2%;
+    }  
+}
+
+@media (min-width: 992px) { 
+  .title-course{
+    display: none;
+  }
+ }
+
+ .margin{
+  margin-top: 35px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,89 @@
+<!-- <h1><b>ZAPATAS/COLUMNAS/MUROS</b></h1> -->
+<div class="md:grid md:grid-cols-2 md:gap-[35px] pb-[40px] md:pb-[40px]">
+    <div class="content-detail px-[20px] pt-[45px] bg-white mt-[45px] sm:px-[25px] sm:pt-[25px]">
+        <form class="form-detail-1 relative mb-[160px] lg:mb-[35px]">
+            <div class="design">
+                <p class="text-[28px] lg:text-[14px] lg:mb-[10px]">Diseño</p>
+                <div class="mb-[50px] lg:grid lg:grid-cols-3 lg:bg-[#EBEBEB] lg:py-[10px] lg:px-[20px] lg:mb-[30px]">
+                    <div class="radio-item w-full mt-[39px] lg:mt-0">
+                        <input checked="true" (click)="cambiar(value210KG)" [value]="value210KG" class="rd-btn" type="radio" id="option1" name="option"/>
+                        <label class="text-[26px] lg:text-[14px]" style="cursor: pointer;" for="option1"><span>210 KG / CM2</span></label></div>
+                    <div class="radio-item w-full mt-[39px] lg:mt-0">
+                        <input (click)="cambiar(value280KG)" [value]="value280KG" class="rd-btn" type="radio" id="option2" name="option"/>
+                        <label class="text-[26px] lg:text-[14px]" style="cursor: pointer;" for="option2"><span>280 KG / CM2</span></label>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="size-max pb-[45px] border-black border-b-[1px] lg:pb-[30px]">
+                <p class="text-[28px] mb-[15px] lg:text-[14px] lg:mb-[10px]" >Tamaño máximo del agregado grueso</p>
+                <input value="3/4" readonly="true" class="bg-[#C4C4C4] text-[30px] px-[25px] py-[20px] w-full lg:text-[14px] lg:py-[15px] lg:bg-[#EBEBEB]" type="text" id="value-size-max" name="value-size-max">
+            </div>
+            <div class="resistance mt-[45px] lg:mt-[30px]">
+                <p class="text-[28px] mb-[15px] lg:text-[14px] lg:mb-[10px]" >Resistencia a la compresión</p>
+                <input [(ngModel)]="resistencia_compresion" readonly="true" class="bg-[#C4C4C4] text-[30px] px-[25px] py-[20px] w-full lg:text-[14px] lg:py-[15px] lg:bg-[#EBEBEB]" type="text" id="value-resistance" name="value-resistance">
+            </div>
+            <div class="measures mt-[30px] pb-[50px] border-black border-b-[1px] lg:mt-[15px] lg:mb-[30px] lg:grid lg:grid-cols-3 lg:gap-[15px] lg:bg-[#EBEBEB] lg:py-[9px] lg:px-[20px] lg:border-0">
+                <div class="mb-[36px] lg:mb-0 lg:flex lg:items-center">
+                    <span class="text-[26px] lg:text-[14px] lg:mr-[8px]">Largo</span>
+                    <input [(ngModel)]="largo" (ngModelChange)="calcular()" class="bg-[#C4C4C4] text-[30px] px-[25px] py-[20px] w-full lg:text-[14px] lg:bg-white lg:px-[10px] lg:py-[5px] lg:max-w-[80px]" type="number" id="large" name="large" required minlength="4" maxlength="8" size="10">
+                </div>
+                <div class="mb-[36px] lg:mb-0 lg:flex lg:items-center">
+                    <span class="text-[26px] lg:text-[14px] lg:mr-[8px]">Ancho</span>
+                    <input [(ngModel)]="ancho" (ngModelChange)="calcular()" class="bg-[#C4C4C4] text-[30px] px-[25px] py-[20px] w-full lg:text-[14px] lg:bg-white lg:px-[10px] lg:py-[5px] lg:max-w-[80px]" type="number" id="width" name="width" required minlength="4" maxlength="8" size="10">
+                </div>
+                <div class="lg:flex lg:items-center">
+                    <span class="text-[26px] lg:text-[14px] lg:mr-[8px]">Altura</span>
+                    <input [(ngModel)]="altura" (ngModelChange)="calcular()" class="bg-[#C4C4C4] text-[30px] px-[25px] py-[20px] w-full lg:text-[14px] lg:bg-white lg:px-[10px] lg:py-[5px] lg:max-w-[80px]" type="number" id="height" name="height" required minlength="4" maxlength="8" size="10">
+                </div>
+            </div>
+            <div class="pb-[90px] lg:border-black lg:border-t-[1px] lg:pt-[30px] lg:grid lg:grid-cols-2 lg:gap-[45px] lg:pb-0">
+                <div class="mt-[50px] lg:mt-0">
+                    <p class="text-[28px] mb-[15px] lg:text-[14px]" >Volúmen total de la obra</p>
+                    <input [(ngModel)]="volumen_total_obra" readonly="true" class="bg-[#C4C4C4] text-[30px] px-[25px] py-[20px] w-full lg:text-[14px] lg:py-[15px] lg:bg-[#EBEBEB]" type="text" id="total-volume" name="total-volume">
+                </div>
+                <div class="mt-[50px] lg:mt-0">
+                    <p class="text-[28px] mb-[15px] lg:text-[14px]" >Agua por bolsa de cemento</p>
+                    <input [(ngModel)]="agua_bolsa_cemento" readonly="true" class="bg-[#C4C4C4] text-[30px] px-[25px] py-[20px] w-full lg:text-[14px] lg:py-[15px] lg:bg-[#EBEBEB]" type="text" id="water-bag" name="water-bag">
+                </div>
+            </div>
+            <button id="btn-resultados" class="bg-[#FF0000] text-white text-[30px] bottom-[-120px] rounded-[10px] absolute left-0 right-0 mx-auto w-fit px-[50px] py-[15px] sm:hidden">Resultados <i class="fa fa-angle-right ml-[20px]"></i></button>
+        </form>
+    </div>
+
+    <!-- RESULTADOS -->
+    <div class="content-results px-[40px] py-[30px] px-[20px] py-[45px] bg-white mt-[70px] sm:px-[25px] lg:mt-[45px]">
+        <p class="text-[30px] border-b-[1px] border-black mb-[20px] lg:text-[18px]" >Resultados</p>
+        <table class="table-results mb-[80px] w-full">
+            <tr class="text-[12px] sm:text-[14px]">
+                <th class="w-2/5 text-left">Componentes del concreto por M3</th>
+                <th class="w-1/5 text-center">Peso (KG)</th>
+                <th class="w-2/5 text-right">Para la obra (con un desperdicio de 10%)</th>
+              </tr>
+            <tr class="text-[12px] sm:text-[14px]">
+              <td class="w-2/5">Agregado grueso<br>(piedra) 1/2"</td>
+              <td class="w-1/5">{{result_gruesoKG}}</td>
+              <td class="w-2/5">{{result_gruesoPercentage}}</td>
+            </tr>
+            <tr class="text-[12px] sm:text-[14px]">
+                <td class="w-2/5">Agregado fino<br>(arena gruesa)</td>
+                <td class="w-1/5">{{result_finoKG}}</td>
+                <td class="w-2/5">{{result_finoPercentage}}</td>
+            </tr>
+            <tr class="text-[12px] sm:text-[14px]">
+                <td class="w-2/5">Bolsa de cemento</td>
+                <td class="w-1/5">{{result_cementoKG}}</td>
+                <td class="w-2/5">{{result_cementoPercentage}}</td>
+            </tr>
+        </table>
+        <div class="border-t-[1px] border-black pt-[25px] md:flex">
+            <div class="md:w-1/2">
+                <p class="text-[16px]" >Contacta y cotiza tus materiales de construcción en:</p>
+            </div>
+            <div class="mt-[25px] md:w-1/2 md:mt-0">
+                <a class="btn-progresol block text-center py-[11px] text-[20px] text-white bg-black rounded-[10px] max-w-[225px] md:ml-auto md:mr-0 md:text-[14px] md:max-w-[200px]" href="#">Progresol</a>
+            </div>
+        </div>
+       
+    </div>
+</div>

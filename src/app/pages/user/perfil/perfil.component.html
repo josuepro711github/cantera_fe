@@ -1,0 +1,247 @@
+<app-header></app-header>
+
+<!-- Banner -->
+<div class="relative">
+  <div class="banner banner_profile bg-cover bg-no-repeat h-[330px] grid items-center relative"></div>
+    <img
+      class="absolute top-[25px] left-[43px]"
+      src="../../../../assets/icons/arrow-left.png"
+      alt="flecha"/>
+    <div class="title text-center text-white">
+      <h6 class="text-[16px] leading-[110%] mb-[20px] block">Mi Perfil</h6>
+      <h1 class="text-[44px] leading-[110%]">Bienvenido {{ nombre }}</h1>
+    </div>
+</div>
+
+
+<main class="bg-gray-200 w-full px-11 py-[46px]">
+  <!-- Mi cuenta -->
+  <!--paso1 -->
+  <div *ngIf="paso == 1" class="mb-[49px] md:mb-[30px]">
+    <h3 class="text-[33px] md:text-[18px] mb-11 md:mb-5">Mi Cuenta</h3>
+    <div
+      class="bg-white rounded-[10px] px-[46px] pt-8 pb-[72px] md:py-[33px] md:grid md:grid-cols-3 md:gap-8 lg:gap-[56px]"
+    >
+      <div class="md:grid md:grid-cols-3 md:col-span-2 style">
+        <div class="md:col-start-1 md:border-r md:pr-5">
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px]">Nombre</h4>
+            <p class="text-[22px] md:text-[15px] text-[#5E5E5E]">
+              {{ nombre }}
+            </p>
+          </div>
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px]">Apellidos</h4>
+            <p class="text-[22px] md:text-[15px] text-[#5E5E5E]">
+              {{ apellido }}
+            </p>
+          </div>
+        </div>
+        <div class="md:col-start-2 md:border-r md:px-5 lg:px-[44px]">
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px] md:leading-6">
+              Correo electrónico
+            </h4>
+            <p class="text-[22px] md:text-[15px] text-[#5E5E5E]">
+              {{ email }}
+            </p>
+          </div>
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px]">Profesión</h4>
+            <p class="text-[22px] md:text-[15px] text-[#5E5E5E]">
+              {{ profesion }}
+            </p>
+          </div>
+        </div>
+        <div class="md:col-start-3 md:pl-5 lg:pl-[44px]">
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px]">Celular</h4>
+            <p
+              class="text-[22px] md:text-[15px] text-[#5E5E5E]">
+              {{ telefono }}
+            </p>
+          </div>
+          <div class="space-y-6 md:space-y-3 py-5 md:py-4">
+            <h4 class="text-2xl md:text-[15px]">Contraseña</h4>
+            <p class="text-[22px] md:text-[15px] text-[#5E5E5E]">xxxxxxxxxx</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-1 md:flex md:items-end md:justify-end md:pb-4">
+        <div
+          (click)="irEditar()"
+          style="cursor: pointer"
+          class="block border-2 text-xl sm:text-[30px] md:text-[14px] w-full sm:w-4/5 md:max-w-[200px] mx-auto md:mx-0 text-center py-3 sm:py-5 md:py-2 border-black rounded-[10px] mt-10 leading-5 hover:text-white hover:bg-black ease-in-out duration-300"
+        >
+          Editar mis datos
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- paso2 -->
+  <div *ngIf="paso == 2" class="mb-[49px] md:mb-[30px]">
+    <h3 class="text-[33px] md:text-[18px] mb-11 md:mb-5">Mi Cuenta</h3>
+    <div
+      class="bg-white rounded-[10px] px-[46px] pt-8 pb-[72px] md:py-[33px] md:grid md:grid-cols-3 md:gap-8 lg:gap-[56px]"
+    >
+      <div class="md:grid md:grid-cols-3 md:col-span-2 style">
+        <div class="md:col-start-1 md:border-r md:pr-5">
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px]">Nombre</h4>
+            <input
+              style="color: black; border-color: black"
+              type="text"
+              [(ngModel)]="editUsuario.nombre"
+            />
+          </div>
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px]">Apellidos</h4>
+            <input
+              style="color: black; border-color: black"
+              type="text"
+              [(ngModel)]="editUsuario.apellidos"
+            />
+          </div>
+        </div>
+        <div class="md:col-start-2 md:border-r md:px-5 lg:px-[44px]">
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px] md:leading-6">
+              Correo electrónico
+            </h4>
+            <input
+              readonly="true"
+              style="color: black; border-color: black"
+              type="text"
+              [(ngModel)]="editUsuario.email"
+            />
+          </div>
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px]">Profesión</h4>
+            <input
+              style="color: black; border-color: black"
+              type="text"
+              [(ngModel)]="editUsuario.ciudad"
+            />
+          </div>
+        </div>
+        <div class="md:col-start-3 md:pl-5 lg:pl-[44px]">
+          <div
+            class="space-y-6 md:space-y-3 border-b md:border-b-0 border-gray-200 py-5 md:py-4"
+          >
+            <h4 class="text-2xl md:text-[15px]">Celular</h4>
+            <input
+              style="color: black; border-color: black"
+              type="text"
+              [(ngModel)]="editUsuario.telefono"
+            />
+          </div>
+          <div class="space-y-6 md:space-y-3 py-5 md:py-4">
+            <h4 class="text-2xl md:text-[15px]">Contraseña</h4>
+            <!-- <p class="text-[22px] md:text-[15px] text-[#5E5E5E]"></p> -->
+            <input
+              style="color: black; border-color: black"
+              type="password"
+              [(ngModel)]="editUsuario.password"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-1 md:flex md:items-end md:justify-end md:pb-4">
+        <div
+          (click)="editar()"
+          style="cursor: pointer"
+          class="block border-2 text-xl sm:text-[30px] md:text-[14px] w-full sm:w-4/5 md:max-w-[200px] mx-auto
+           md:mx-0 text-center py-3 sm:py-5 md:py-2 border-black rounded-[10px] mt-10 leading-5 hover:text-white 
+           hover:bg-black ease-in-out duration-300"
+        >
+          Guardar mis datos
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mis Cursos -->
+  <div class="mb-[49px] md:mb-[30px]">
+    <h3 class="text-[33px] md:text-[18px] mb-11 md:mb-5">Mis Cursos</h3>
+    <div
+      class="bg-white rounded-[10px] px-[46px] pt-8 pb-[72px] md:py-[33px] md:flex md:justify-between">
+      <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 lg:gap-[56px]">
+
+        <div *ngFor="let p of cursosPorcentaje" 
+          class="py-4 border-b md:border-b-0 border-[#ACACAC]">
+          <a
+            href="#"
+            class="uppercase text-base sm:text-[24px] md:text-[15px] block mb-6 md:mb-2 font-medium"
+            >{{p[1]}}</a>
+          <img style="width: 100%;"
+            src={{p[0]}}
+            alt="img"
+            class="aspect-video object-cover"/>
+          <div class="mt-[20px] mb-[7px] h-[13px] w-full bg-[#C4C4C4]">
+            <div class="h-full bg-red-600" [style]="'width:'+p[2]+'%'"></div>
+          </div>
+          <span class="text-[20px] text-[12px]">Curso al {{p[2]}}%</span>
+        </div>
+
+        <div (click)="listaCursos()" style="cursor: pointer;" class="md:flex md:items-end ">
+          <a
+            class="block border-2 text-xl sm:text-[30px] md:text-[14px] w-full sm:w-4/5 md:max-w-[200px]
+             mx-auto md:mx-0 text-center py-3 sm:py-5 md:py-2 border-black rounded-[10px] mt-10 leading-5
+              md:mb-8 lg:mb-16 hover:text-white hover:bg-black ease-in-out duration-300"
+            >Ver lista de cursos</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Mis certificados -->
+  <div class="mb-[49px] md:mb-[30px]">
+    <h3 class="text-[33px] md:text-[18px] mb-11 md:mb-5">Mis Certificados</h3>
+    <div
+      class="bg-white rounded-[10px] px-[46px] py-8 md:py-[33px] md:flex md:justify-between"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 lg:gap-[56px]">
+        <div class="py-6 border-b md:border-b-0 border-[#ACACAC]">
+          <img
+            src="../../../../assets/img/certificado.jpg"
+            alt="video"
+            class="aspect-video object-cover"
+          />
+        </div>
+        <div class="py-6">
+          <img
+            src="../../../../assets/img/certificado.jpg"
+            alt="video"
+            class="aspect-video object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-otros-cursos></app-otros-cursos>
+
+<app-footer></app-footer>

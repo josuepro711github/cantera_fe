@@ -1,0 +1,15 @@
+*{
+    font-family: 'silka-medium';
+}
+
+.final{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .cuerpo{
+        padding-top: 0;
+    }
+}

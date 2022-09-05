@@ -1,0 +1,171 @@
+<div
+  *ngIf="modalRegistro == false"
+  class="absolute mix-blend-multiply top-0 left-0 w-full max-w-screen min-h-screen flex justify-center back_menu z-index">
+</div>
+
+<div class="bg-close" (click)="closeLogin()">
+  <div class="top-0 registro_center left-0 flex justify-center z-index reposive_movil height_calc">
+
+    <div (mouseenter)="noCerrar()" (mouseleave)="noCerrar2()" class="login-main w-full md:w-[567px] grid_modal_content">
+      <div class="nav">
+        <div class="logo">
+          <div class="unacem">
+            <img
+              src="../../../../assets/svg/logo/imagen.svg"
+              style="width: 13px; height: 14px"
+            />
+            <img
+              src="../../../../assets/svg/logo/U-unacem.svg"
+              style="width: 7px; height: 8px; margin-left: 2px"
+            />
+            <img
+              src="../../../../assets/svg/logo/N-unacem.svg"
+              style="width: 7px; height: 8px"
+            />
+            <img
+              src="../../../../assets/svg/logo/A-unacem.svg"
+              style="width: 8px; height: 8px"
+            />
+            <img
+              src="../../../../assets/svg/logo/C-unacem.svg"
+              style="width: 8px; height: 8px"
+            />
+            <img
+              src="../../../../assets/svg/logo/E-unacem.svg"
+              style="width: 7px; height: 8px"
+            />
+            <img
+              src="../../../../assets/svg/logo/M-unacem.svg"
+              style="width: 8px; height: 8px"
+            />
+          </div>
+          <div class="cantera" style="display: flex; padding-top: 3px">
+            <img
+              src="../../../../assets/svg/logo/C-cantera.svg"
+              style="margin-right: -1px"
+            />
+            <img
+              src="../../../../assets/svg/logo/A-cantera.svg"
+              style="padding-right: 1.1px"
+            />
+            <img
+              src="../../../../assets/svg/logo/N-cantera.svg"
+              style="padding-right: 1.5px"
+            />
+            <img
+              src="../../../../assets/svg/logo/T-cantera.svg"
+              style="padding-right: 1px"
+            />
+            <img
+              src="../../../../assets/svg/logo/E-cantera.svg"
+              style="padding-right: 1.5px"
+            />
+            <img src="../../../../assets/svg/logo/R-cantera.svg" />
+            <img
+              src="../../../../assets/svg/logo/A-cantera.svg"
+              style="padding-left: -0.5px"
+            />
+          </div>
+        </div>
+        <button
+          class="btn-cerrar">
+          <img (click)="closeLoginMovile()"
+            src="../../../../assets/icons/close-black.png"
+            alt="close"/>
+        </button>
+      </div>
+      <div
+        class="bg-gray-200 md:bg-white flex flex-col py-[52px] md:py-9 px-[43px] md:px-[107px] h-100 scroll-y"
+        id="custom-scroll">
+        <!-- <button
+          class="btn-cerrar self-end block">
+          <img (click)="closeLoginMovile()"
+            src="../../../../assets/icons/close-black.png"
+            alt="close"/>
+        </button> -->
+        <p class="text-center mt-8 text-lg sm:text-2xl md:text-[14px] md:leading-5 md:mt-0">
+          Hola Maestro, bienvenido a UNACEM CANTERA. Déjanos tus datos y sé
+          parte de nuestro programa.
+        </p>
+        <div style="margin-top: 2rem; margin-bottom: 2rem;" 
+        class="text-[16px] sm:text-[30px] md:text-[15px] flex md:mt-8 rounded-[10px] bg-white md:bg-gray-300">
+          <a (click)="irRegistro()"
+            style="color: black; cursor: pointer;"
+            class="py-3 flex-1 text-center rounded-[10px] text-white pointer">
+            Reg&iacute;strate
+          </a>
+          <a style="background: #FF0000; color: white;" class="py-3 flex-1 text-center rounded-[10px] pointer">Ingresa</a>
+        </div>
+        <form [formGroup]="formLogin">
+          <div class="inputs">
+            <div class="mb-6 md:mb-[14px]">
+              <label for="email" class="text-xl sm:text-[28px] md:text-[15px]">
+                Correo electrónico
+              </label>
+              <input
+                [(ngModel)]="loginUsuario.username"
+                formControlName="email"
+                type="email"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+              <div *ngIf="formLogin.controls['email'].invalid && (formLogin.controls['email'].touched || formLogin.controls['email'].dirty)" class="error">
+                <p *ngIf="formLogin.controls['email'].errors?.['required']">
+                   El campo es requerido
+                </p>
+                <p *ngIf="formLogin.controls['email'].errors?.['pattern']">
+                  El campo solo admite tipo correo
+               </p>
+              </div>
+            </div>
+            <div class="mb-6 md:mb-[14px]">
+              <label
+                for="password"
+                class="text-xl sm:text-[28px] md:text-[15px]">
+                Contraseña
+              </label>
+              <input
+              [(ngModel)]="loginUsuario.password"
+                formControlName="password"
+                type="password"
+                class="rounded-[10px] bg-gray-300 w-full p-3 text-xl sm:text-[30px] md:text-lg outline-none mt-2"/>
+              <div *ngIf="formLogin.controls['password'].invalid && (formLogin.controls['password'].touched || formLogin.controls['password'].dirty)" class="error">
+                <p *ngIf="formLogin.controls['password'].errors?.['required']">
+                    El campo es requerido
+                </p>
+              </div>  
+            </div>
+          </div>
+          <div class="recaptcha-container" style="display: flex; justify-content: center;">
+            <ngx-recaptcha2
+              #captchaElem
+              [siteKey]="siteKey"
+              class="recaptcha"
+              formControlName="recaptcha">
+            </ngx-recaptcha2>
+         </div>
+          <a style="background: #FF0000; color: white; cursor: pointer;"
+            (click)="onLogin()"
+            class="boton-registro mt-[76px] md:mt-[30px] text-center text-white text-2xl sm:text-3xl md:text-base w-full
+             rounded-[10px] py-3 md:border-2 md:bg-white md:py-2 md:w-[240px] md:mx-auto block font-medium">
+            Ingresar
+          </a>
+        </form>
+        <div class="texto2">
+          <p class="text-center text-xl sm:text-2xl mt-[27px] md:text-sm md:mt-[13px]">
+            ¿No tienes cuenta?
+            <a
+              style="color: #FF0000; cursor: pointer;"
+              (click)="irRegistro()"
+              class="underline font-bold text-2xl sm:text-[28px] md:text-sm">
+              Regístrate
+            </a>
+          </p>
+          <a
+            class="block text-center underline font-bold sm:text-[26px] md:text-sm mt-8 md:mt-4"
+            href="">
+            Términos y condiciones
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

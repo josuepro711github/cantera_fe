@@ -1,0 +1,95 @@
+* {
+  font-family: "silka-medium";
+}
+.activado {
+  color: #ff0000;
+}
+.activad2 {
+  color: #ff0000;
+}
+.texto {
+  font-weight: 500;
+}
+.texto:hover {
+  color: #ff0000;
+}
+.subtexto {
+  padding-bottom: 3px;
+}
+.subtexto:hover {
+  border-bottom: 2px solid black;
+}
+
+.logo .unacem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-ed{
+  position: absolute !important;
+  left: calc(50% - 159px) !important;
+}
+
+.hover-ed:hover .hover-block-ed{
+  display: block !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .menu img {
+    width: 35px;
+  }
+  .close img {
+    width: 23px;
+  }
+}
+
+.border-letra-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .borde-letra {
+    border: 3px solid #ff0000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .letra-t {
+      text-transform: capitalize;
+      font-size: 22px;
+      -webkit-text-fill-color: white;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #ff0000;
+    }
+  }
+  .letra-black{
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+}
+
+@media (min-width: 1024px){
+  .borde-letra {
+    border: 3px solid #ff0000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .letra-t {
+      text-transform: capitalize;
+      /* color: white; */
+      font-size: 22px;
+      -webkit-text-fill-color: white;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #ff0000;
+    }
+    .letra-black{
+      margin-left: 14px;
+      margin-right: 0;
+    }
+  }
+}
+

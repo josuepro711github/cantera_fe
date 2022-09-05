@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<!-- Componente slider-home -->
+<app-slider-home *ngIf="mostrar" [items]="sliderData"></app-slider-home>
+<!-- <app-sliderv2></app-sliderv2> -->
+
+<main *ngIf="mostrar" class="home">
+    <div class="home__sections bg-black md:flex ">
+        <section class="home__section sec1 pt-[75px] md:w-1/2 "> 
+            <div class="home__container">
+                <h4 class="text-white text-[40px] pl-[40px] pr-[40px] pb-[40px] md:pr-[50px] md:text-[30px] md:leading-[110%] md:pb-[25px]">Conoce</h4>
+                <img class="img-cantera w-full pr-[40px] md:pr-[50px]" src="../../../../assets/img/cantera_black.jpg" alt="cantera">
+                <p class="color home__description text-white text-[20px] pl-[40px] pr-[40px] pt-[80px] pb-[80px] 
+                md:pr-[50px] md:text-[14px] md:leading-[160%] md:pt-[37px] md:pb-[25px]">Maestro, te ofrecemos las herramientas
+                 y conceptos que necesitas para que tus proyectos de construcción  se realicen correctamente y de forma segura. 
+                 <br><br>Aquí formarás parte de la primera CANTERA de maestros de obra del país. En la cuál podrás capacitarte con 
+                 contenido desarrollado por especialistas y profesionales de la construcción para complementar tu potencial y contribuir con tu formación. 
+                <br><br>Tendrás acceso a cursos gratuitos, postular a becas con certificación en alianza con instituciones educativas, 
+                utilizar herramientas complementarias y más. Todo a tu disposición en el horario que mejor te acomode. 
+                </p>
+            </div>  
+        </section>
+        <section class="home__section md:w-1/2 padding-left-ed">
+            <div class="home__container">
+                <img class="img-home w-full" src="../../../../assets/svg/home_constructorv5.svg" alt="home">
+                <div class="logos-container">
+                <div class="home_logos flex items-center pb-[108px] pt-[70px] md:pt-[58px] md:pb-0">
+                    <img class="img-logo w-[120px] md:w-[95px] size-width-heigth" src="../../../../assets/svg/icon1.svg" alt="logo1">
+                    <img class="img-logo logo-2 w-[128px] md:w-[102px] size-width-heigth" src="../../../../assets/svg/icon2.svg" alt="logo2">
+                    <img class="img-logo w-[128px] md:w-[102px] size-width-heigth" src="../../../../assets/svg/icon3.svg" alt="logo3">
+                </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<app-footer></app-footer>
+

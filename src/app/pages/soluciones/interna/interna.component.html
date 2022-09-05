@@ -1,0 +1,78 @@
+<app-header></app-header>
+<main *ngIf="mostrar" class="soluciones-internas">
+    <div class="div-soluciones-internas bg-[#EBEBEB] px-[40px] py-[30px] ">
+        <a class="block mb-15px"><img src="../../../../assets/icons/arrow-left-black.png"></a>
+        <div class="pb-[45px] border-solid border-black border-b-[1px] md:grid md:grid-cols-2 md:gap-[35px]">
+            <section class="mt-[50px]">
+                <h1 class="text-[40px] leading-normal mt-[25px] mb-[40px] md:text-[35px] md:mb-[25px] font-medium">Calculadora de materiales <br> de construcción</h1>
+                <div class="text-[20px] md:text-[18px]">
+                    <p style="font-weight: 500; width: 90%;">
+                        Determina de una manera sencilla la cantidad adecuada de cemento, agregados y agua que requerirá la mezcla de concreto para cada uno de tus proyectos. 
+                        Selecciona el tipo de construcción, ingresa los datos y obtén la proporción adecuada de cada material.
+                    </p><br>
+                    <p class="sm:hidden font-medium">
+                        * Recuerda que, para garantizar la dosificación es importante utilizar materiales de calidad, respetar el proceso constructivo y contar con la 
+                        supervisión de un ingeniero civil, ya que estos pueden afectar en el resultado final de tu mezcla de concreto.
+                    </p>
+                </div>
+            </section>
+            <section class="px-[20px] py-[45px] bg-white mt-[70px] sm:px-[50px] sm:mt-0 sm:py-[35px]">
+                <form class="form-calculator">
+                    <p style="font-weight: 500;" class="text-[30px] leading-normal text-center mb-[24px] sm:text-[18px] sm:text-left">Selecciona la construcción a realizar</p>          
+                    <select class="text-[20px] py-[30px] pl-[30px] pr-[20px] w-full bg-[#EBEBEB] sm:text-[16px] sm:py-[18px] sm:px-[15px] pointer font-medium"
+                            name="type-construction"
+                            [(ngModel)]="calculadoraMaterialesSelected"
+                            (ngModelChange)="valorSeleccionado($event)">
+                        <option style="font-weight: 500;" *ngFor="let cal of calculadoraMateriales" [value]="cal.Id">
+                            {{cal.Name}}
+                        </option>
+                    </select>
+                      <div class="type-image mt-[50px]">
+                        <div *ngIf="img1 == true">
+                            <img class="img-construccion w-full" src="../../../../assets/img/Zapatas_para_columnas.png">
+                        </div>
+                        <div *ngIf="img2 == true">
+                            <img class="img-construccion w-full " src="../../../../assets/img/Zapatas_para_muros.png">
+                        </div>
+                        <div *ngIf="img3 == true">
+                            <img class="img-construccion w-full " src="../../../../assets/img/Cimientos.png">
+                        </div>
+                        <div *ngIf="img4 == true">
+                            <img class="img-construccion w-full " src="../../../../assets/img/Sobrecimientos.png">
+                        </div>
+                        <div *ngIf="img5 == true">
+                            <img class="img-construccion w-full " src="../../../../assets/img/vigas.png">
+                        </div>
+                        <div *ngIf="img6 == true">
+                            <img class="img-construccion w-full " src="../../../../assets/img/Columnas.png">
+                        </div>
+                        <div *ngIf="img7 == true">
+                            <img class="img-construccion w-full " src="../../../../assets/img/Placas.png">
+                        </div>
+                        <div *ngIf="img8 == true">
+                            <img class="img-construccion w-full " src="../../../../assets/img/Muro_de_contención.png">
+                        </div>
+                      </div>
+                </form>
+            </section>
+        </div>
+
+                <!-- Zapatos para columnas /Zapatos para muros -->        
+                <app-zapatas-columnas-muros *ngIf="zapatas == true"></app-zapatas-columnas-muros>
+
+                <!-- Cimientos y sobrecimientos -->        
+                <app-cimientos *ngIf="cimientos == true"></app-cimientos>
+
+                <!-- sobrecimientos -->
+                <app-sobrecimientos *ngIf="sobrecimientos == true"></app-sobrecimientos>  
+
+                <!-- Columnas /Placas /Vigas -->             
+                <app-columnas-placas-vigas *ngIf="columnas == true"></app-columnas-placas-vigas>
+
+                 <!--Muro de contención-->                
+                 <app-muro-contencion *ngIf="muro == true"></app-muro-contencion>
+
+        </div>     
+</main>
+<app-otras-herramientas></app-otras-herramientas>
+<app-footer></app-footer>

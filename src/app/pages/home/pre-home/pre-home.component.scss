@@ -1,0 +1,84 @@
+* {
+  font-family: "silka-medium";
+}
+.pointer {
+  cursor: pointer;
+}
+
+.prehome {
+  &__section {
+    &:first-of-type {
+      background: url("../../../../assets/img/constructorv2.png") no-repeat top center;
+      background-size: cover;
+    }
+
+    &:last-of-type {
+      background: url("../../../../assets/img/empresariov3.png") no-repeat top center;
+      background-size: cover;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      height: 100%;
+      width: 100%;
+      //background: linear-gradient(180deg, #46464336 30%, #464643ab 70%);
+      background: linear-gradient(180deg, #9B9595 41.81%, rgba(196, 196, 196, 0) 100%);
+      mix-blend-mode: multiply;
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.wsp_border {
+  position: relative;
+  background-image: url("../../../../assets/svg/wsp_border.svg");
+  background-size: 57px;
+  background-position: center;
+  width: 57px;
+  height: 57px;
+}
+.wsp_tel {
+  position: absolute;
+  background-image: url("../../../../assets/svg/wsp_tel.svg");
+  background-size: 28px;
+  background-position: center;
+  width: 28px;
+  height: 26px;
+  left: 24.5%;
+  top: 28%;
+}
+
+@media (max-width: 640px) {
+  // .prehome {
+  //   &__section {
+  //     &:first-of-type {
+  //       background: none;
+  //     }
+
+  //     &:last-of-type {
+  //       background: none;
+  //     }
+
+  //     &::before {
+  //       content: "";
+  //       background: none;
+  //     }
+  //   }
+  // }
+}
+
+.logo .unacem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .logo .unacem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

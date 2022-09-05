@@ -1,0 +1,135 @@
+ * {
+  font-family: "silka-medium";
+}
+.error p{
+  color: #FF0000;
+}
+.bg-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  height: 100%;
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  //border: 5px solid blue;
+}
+
+.grid_modal_content {
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+}
+
+.height_calc {
+  height: calc(100vh - 0rem);
+}
+
+.login-main {
+  min-width: 35%;
+  /*  height: 75%; */
+  background: white;
+  .nav {
+    position: relative;
+    height: 100%;
+    //height: 90px;
+    width: 100%;
+    background: #FF0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .logo .unacem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-cerrar{
+      position: absolute;
+      top: 40%;
+      right: 20px;
+      img{
+        filter: invert(98%) sepia(0%) saturate(0%) hue-rotate(28deg) brightness(104%) contrast(103%);
+      }
+    }
+  }
+}
+.boton-registro:hover {
+  background: #FF0000;
+  color: white;
+}
+.boton-registro {
+  border-color: #FF0000;
+  color: #FF0000;
+}
+@media (min-width: 768px) {
+  .btn-cerrar{
+    margin-bottom: 20px;
+  }
+  .login-container {
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /*     height: 100%; */
+    .login-main {
+      min-width: 35%;
+      /* height: 75%; */
+      background: white;
+      .nav {
+        height: 100%;
+        width: 100%;
+        background: #FF0000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logo .unacem {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .body {
+        /*    padding: 20px; */
+      }
+    }
+  }
+
+  .height_calc {
+    height: calc(100vh - 4rem);;
+  }
+
+}
+@media (min-width: 550px) {
+  .texto,
+  .botonos,
+  .inputs {
+    font-size: 1em;
+  }
+}
+
+#custom-scroll::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 7px;
+  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05),
+    inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+#custom-scroll::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+#custom-scroll::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.scroll-y {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}

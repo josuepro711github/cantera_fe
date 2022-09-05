@@ -1,0 +1,282 @@
+<header class="flex relative h-[100px] sm:h-[125px] md:h-[83px]">
+  <div style="background: #ff0000" class="grid place-items-center h-full w-[200px] sm:w-[311px]">
+    <a routerLink="/constructores">
+      <div class="logo">
+        <div class="unacem">
+          <img src="../../../assets/svg/logo/imagen.svg" style="width: 13px; height: 14px" />
+          <img src="../../../assets/svg/logo/U-unacem.svg" style="width: 7px; height: 8px; margin-left: 2px" />
+          <img src="../../../assets/svg/logo/N-unacem.svg" style="width: 7px; height: 8px" />
+          <img src="../../../assets/svg/logo/A-unacem.svg" style="width: 8px; height: 8px" />
+          <img src="../../../assets/svg/logo/C-unacem.svg" style="width: 8px; height: 8px" />
+          <img src="../../../assets/svg/logo/E-unacem.svg" style="width: 7px; height: 8px" />
+          <img src="../../../assets/svg/logo/M-unacem.svg" style="width: 8px; height: 8px" />
+        </div>
+        <div class="cantera" style="display: flex; padding-top: 3px">
+          <img src="../../../assets/svg/logo/C-cantera.svg" style="margin-right: -1px" />
+          <img src="../../../assets/svg/logo/A-cantera.svg" style="padding-right: 1.1px" />
+          <img src="../../../assets/svg/logo/N-cantera.svg" style="padding-right: 1.5px" />
+          <img src="../../../assets/svg/logo/T-cantera.svg" style="padding-right: 1px" />
+          <img src="../../../assets/svg/logo/E-cantera.svg" style="padding-right: 1.5px" />
+          <img src="../../../assets/svg/logo/R-cantera.svg" />
+          <img src="../../../assets/svg/logo/A-cantera.svg" style="padding-left: -0.5px" />
+        </div>
+      </div>
+    </a>
+  </div>
+  <!-- Mobile -->
+  <div class="flex-1 flex justify-between pr-6 pl-5 sm:pr-11 sm:pl-8 lg:hidden bg-white">
+    <div (click)="openPerfil('movil')" class="border-letra-container hover-ed" style="cursor: pointer;">
+      <div *ngIf="token != null" class="borde-letra ">
+        <a class="letra-t">{{ checkIfNew(nombres) }}</a>
+      </div>
+      <a class="letra-black ml-[14px]">{{ nombres }}</a>
+
+      <li class="flex items-center relative h-full z-10">
+
+        <div style="right: -43px !important;
+          top: 98% !important;display: none;"
+          class="absolute w-[174px] py-6 group-hover:block bg-white hover-block-ed">
+          <div
+            class="absolute h-0 w-0 border-x-[10px] border-x-transparent border-b-[10px] border-b-white top-[-10px] left-[calc(50%-5px)]">
+          </div>
+          <ul class="space-y-5 text-center text-[15px]">
+            <li (click)="cerrarSesion()">
+              <a class="hover:font-bold subtexto" style="cursor: pointer;">Cerrar Sesión</a>
+            </li>
+            <li routerLink="/perfil">
+              <a class="hover:font-bold subtexto" style="cursor: pointer;">Mi Perfil</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+    </div>
+    <button *ngIf="token == null || token == undefined" (click)="openLogin()" class="text-[20px] sm:text-[28px]">
+      Entrar
+    </button>
+    <button class="sm:w-auto menu" *ngIf="menuMovil == false" (click)="openMenuMovil()">
+      <img src="../../../assets/icons/menu.png" alt="menu" />
+    </button>
+    <button class="sm:w-auto block close" *ngIf="menuMovil" (click)="closeMenuMovil()">
+      <img src="../../../assets/icons/close.png" alt="close" />
+    </button>
+  </div>
+
+  <div class="flex-1 flex justify-between items-center hidden lg:flex px-3 xl:pr-[49px] xl:pl-[30px] menu">
+    <!-- NAV DESK -->
+    <nav class="text-sm xl:text-base h-full nav_desk">
+      <ul class="flex space-x-6 h-full items-center">
+        <li class="flex items-center relative group h-full z-10">
+          <a (click)="activar()" routerLink="/capacitaciones/cursos-online" class="inline-block h-full flex items-center texto"
+            [ngClass]="{'activad2': rutaLocalstorage=='cursos-online'|| rutaLocalstorage=='facebook-live'}">
+            Capacitaciones
+            <div *ngIf="rutaLocalstorage=='cursos-online'|| rutaLocalstorage=='facebook-live'; then flechaColor;else flecha">
+            </div>
+            <ng-template #flechaColor>
+              <img src="../../../assets/icons/menu-arrow-color.png" alt="menu-arrow"
+              class="w-[6px] h-[11px] ml-[14px] mt-1" />
+            </ng-template>
+
+            <ng-template #flecha>
+              <img src="../../../assets/icons/menu-arrow.png" alt="menu-arrow" 
+              class="w-[6px] h-[11px] ml-[14px] mt-1" />
+            </ng-template>
+          </a>
+          <div
+            class="absolute top-full h-[28px] bg-wtransparent w-[174px] left-[calc(50%-87px)] hidden group-hover:block">
+          </div>
+          <div class="absolute top-[110px] w-[174px] py-6 left-[calc(50%-87px)] hidden group-hover:block bg-white">
+            <div
+              class="absolute h-0 w-0 border-x-[10px] border-x-transparent border-b-[10px] border-b-white top-[-10px] left-[calc(50%-5px)]">
+            </div>
+            <ul class="space-y-5 text-center text-[15px]">
+              <li>
+                <a routerLink="/capacitaciones/cursos-online" class="hover:font-bold subtexto">Cursos Online</a>
+              </li>
+              <li>
+                <a routerLink="/capacitaciones/facebook-live" class="hover:font-bold subtexto">Facebook Live</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex items-center relative group h-full z-10">
+          <a [ngClass]="{'activad2': rutaLocalstorage=='herramientas'|| rutaLocalstorage=='video-tips'}"
+            routerLink="/soluciones_constructivas/herramientas" class="inline-block h-full flex items-center texto">
+            Soluciones constructivas
+            <div *ngIf="rutaLocalstorage=='herramientas'|| rutaLocalstorage=='video-tips'; then flechaColor;else flecha">
+            </div>
+          </a>
+          <div
+            class="absolute top-full h-[28px] bg-wtransparent w-[174px] left-[calc(50%-87px)] hidden group-hover:block">
+          </div>
+          <div class="absolute top-[110px] w-[174px] py-6 left-[calc(50%-87px)] hidden group-hover:block bg-white">
+            <div
+              class="absolute h-0 w-0 border-x-[10px] border-x-transparent border-b-[10px] border-b-white top-[-10px] left-[calc(50%-5px)]">
+            </div>
+            <ul class="space-y-5 text-center text-[15px]">
+              <li>
+                <a routerLink="/soluciones_constructivas/herramientas" class="hover:font-bold subtexto">Herramientas</a>
+              </li>
+              <li>
+                <a routerLink="/soluciones_constructivas/video-tips" class="hover:font-bold subtexto">Video Tips</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex items-center relative group h-full z-10">
+          <a routerLink="/programa_especializacion/certificacion" class="inline-block h-full flex items-center texto"
+            [ngClass]="{'activad2': rutaLocalstorage=='certificacion'|| rutaLocalstorage=='estructura'}">
+            Programa de Especializaci&oacute;n
+            <div *ngIf="rutaLocalstorage=='certificacion'|| rutaLocalstorage=='estructura'; then flechaColor;else flecha">
+            </div>
+          </a>
+          <div
+            class="absolute top-full h-[28px] bg-wtransparent w-[174px] left-[calc(50%-87px)] hidden group-hover:block">
+          </div>
+          <div class="absolute top-[110px] w-[174px] py-6 left-[calc(50%-87px)] hidden group-hover:block bg-white">
+            <div
+              class="absolute h-0 w-0 border-x-[10px] border-x-transparent border-b-[10px] border-b-white top-[-10px] left-[calc(50%-5px)]">
+            </div>
+            <ul class="space-y-5 text-center text-[15px]">
+              <li>
+                <a routerLink="/programa_especializacion/certificacion" class="hover:font-bold subtexto">Certificaci&oacute;n
+                </a>
+              </li>
+              <li>
+                <a routerLink="/programa_especializacion/estructura" class="hover:font-bold subtexto">Estructura
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div style="cursor: pointer;" class="flex place-items-center group" *ngIf="token != null">
+      <div (click)="openPerfil('desk')" class="borde-letra">
+        <a class="letra-t">{{ checkIfNew(nombres) }}</a>
+      </div>
+      <a (click)="openPerfil('desk')" class="letra-black ml-[14px]">{{ nombres }}</a>
+
+      <li class="flex items-center relative h-full z-10">
+        <img src="../../../assets/icons/menu-arrow.png" alt="menu-arrow" class="w-[6px] h-[11px] ml-[14px] mt-1" />
+        <div style="left: -143px;"
+          class="absolute top-full h-[28px] bg-wtransparent w-[174px] hidden group-hover:block"></div>
+
+        <div style="top: 38px !important; left: -143px; padding-bottom:10px;"
+          class="absolute  hidden group-hover:block">
+          <div class=" bg-white w-[174px] py-6">
+            <div
+              class="absolute h-0 w-0 border-x-[10px] border-x-transparent border-b-[10px] border-b-white top-[-10px] left-[calc(50%-5px)]">
+            </div>
+            <ul class="space-y-5 text-center text-[15px]">
+              <li (click)="cerrarSesion()">
+                <a class="hover:font-bold subtexto" style="cursor: pointer;">Cerrar Sesión</a>
+              </li>
+              <li routerLink="/perfil">
+                <a class="hover:font-bold subtexto" style="cursor: pointer;">Mi Perfil</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </div>
+
+    <div *ngIf="token == null || token == undefined">
+      <div *ngIf="!isLogin" class="flex space-x-2 xl:space-x-6 text-[14px]">
+        <button (click)="openLogin()" (click)="closeMenuMovil()">Entrar</button>
+        <button (click)="openRegistro()" class="text-white py-2 px-5 rounded-[10px]" style="background: #ff0000">
+          Crear cuenta
+        </button>
+      </div>
+    </div>
+  </div>
+  <!--  NAV MOVILE -->
+  <nav *ngIf="menuMovil" class="z-10 absolute top-full left-0 w-full bg-gray-200 pt-[25px] pr-[30px] pb-[34px] pl-[29px] sm:pt[38px] 
+    pr-[43px] pb-[47px] pl-[43px] block lg:hidden nav_movile">
+    <ul class="w-auto">
+      <li style="cursor: pointer" (click)="capacitacionesMovil == false
+            ? openCapacitaciones()
+            : closeCapacitaciones()" class="w-full flex flex-col border-b border-black">
+        <div class="w-full flex justify-between py-8 sm:py-11">
+          <span class="text-[30px] sm:text-[40px]">Capacitaciones</span>
+          <button *ngIf="capacitacionesMovil == false" class="ml-[15px] ease-in-out duration-300">
+            <img src="../../../assets/icons/menu-arrow.png" alt="menu-arrow_open" class="w-3 sm:w-auto" />
+          </button>
+          <button *ngIf="capacitacionesMovil == true" class="ml-[15px] rotate-90 ease-in-out duration-300">
+            <img src="../../../assets/icons/menu-arrow.png" alt="menu_arrow_close" />
+          </button>
+        </div>
+        <ul *ngIf="capacitacionesMovil == true" class="pt-0 pr-[15px] pb-[30px] pl-[10px] sm:px-5 pb-[50px]">
+          <li class="text-[20px] mb-[18px] sm:text-[30px] sm:mb-[38px]">
+            <a routerLink="/capacitaciones/cursos-online">Cursos Online</a>
+          </li>
+          <!-- <li class="text-[20px] mb-[18px] sm:text-[30px] sm:mb-[38px]">
+            <a routerLink="/capacitaciones/cursos-online">Facebook Live</a>
+          </li> -->
+        </ul>
+      </li>
+
+      <li style="cursor: pointer" (click)="solucionesMovil == false ? openSoluciones() : closeSoluciones()"
+        class="w-full flex flex-col border-b border-black">
+        <div class="w-full flex justify-between py-8 sm:py-11">
+          <span class="text-[30px] sm:text-[40px]">Soluciones constructivas</span>
+          <button *ngIf="solucionesMovil == false" class="ml-[15px] ease-in-out duration-300">
+            <img src="../../../assets/icons/menu-arrow.png" alt="menu-arrow_open" class="w-3 sm:w-auto" />
+          </button>
+          <button *ngIf="solucionesMovil == true" class="ml-[15px] rotate-90 ease-in-out duration-300">
+            <img src="../../../assets/icons/menu-arrow.png" alt="menu_arrow_close" />
+          </button>
+        </div>
+        <ul *ngIf="solucionesMovil == true" class="pt-0 pr-[15px] pb-[30px] pl-[10px] sm:px-5 pb-[50px]">
+          <li class="text-[20px] mb-[18px] sm:text-[30px] sm:mb-[38px]">
+            <a routerLink="/soluciones_constructivas/herramientas">Herramientas</a>
+          </li>
+          <li class="text-[20px] mb-[18px] sm:text-[30px] sm:mb-[38px]">
+            <a routerLink="/soluciones_constructivas/video-tips">Video Tips</a>
+          </li>
+        </ul>
+      </li>
+
+      <li (click)="programaMovil == false ? openPrograma() : closePrograma()"
+        class="w-full flex flex-col border-b border-black" style="cursor: pointer">
+        <div class="w-full flex justify-between py-8 sm:py-11">
+          <span class="text-[30px] sm:text-[40px]">Programa de Especializaci&oacute;n</span>
+          <!-- <button *ngIf="programaMovil == false" -->
+          <button *ngIf="programaMovil == false" class="ml-[15px] ease-in-out duration-300">
+            <img src="../../../assets/icons/menu-arrow.png" alt="menu-arrow_open" class="w-3 sm:w-auto" />
+          </button>
+          <button *ngIf="programaMovil == true" class="ml-[15px] rotate-90 ease-in-out duration-300">
+            <img src="../../../assets/icons/menu-arrow.png" alt="menu_arrow_close" />
+          </button>
+        </div>
+        <ul *ngIf="programaMovil == true" class="pt-0 pr-[15px] pb-[30px] pl-[10px] sm:px-5 pb-[50px]">
+          <li class="text-[20px] mb-[18px] sm:text-[30px] sm:mb-[38px]">
+            <a routerLink="/programa_especializacion/certificacion">Certificaci&oacute;n</a>
+          </li>
+          <li class="text-[20px] mb-[18px] sm:text-[30px] sm:mb-[38px]">
+            <a routerLink="/programa_especializacion/estructura">Estructura</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="mt-[206px]">
+      <p class="text-base mt-[26px] sm:text-2xl sm:mb-9">© 2020 UNACEM</p>
+      <p class="text-xl mb-[30px] sm:text-[30px] mb-10">UNACEM PERÚ S.A.</p>
+      <div class="text-[16px] leading-[1.5] sm:text-[30px]">
+        <p>Av. Atocongo 2440</p>
+        <p>Villa María del Triunfo. Lima, Perú</p>
+        <p>T (511) 217 0200</p>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div *ngIf="modalLogin == true">
+  <app-login></app-login>
+</div>
+
+<div *ngIf="modalRegistro">
+  <app-registro></app-registro>
+</div>

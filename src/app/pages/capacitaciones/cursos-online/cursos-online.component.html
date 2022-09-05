@@ -1,0 +1,53 @@
+<app-header></app-header>
+<main *ngIf="mostrar" class="capacitaciones-online">
+  <div class="relative">
+    <div class="banner bg_capacitaciones bg-cover bg-no-repeat h-[330px] grid items-center"></div>
+    <img
+      class="absolute top-[30px] left-[43px]"
+      src="../../../../assets/icons/arrow-left.png"
+      alt="flecha"/>
+    <div class="absolute title text-center text-white">
+      <h6 class="text-[16px] leading-[110%] mb-[20px] block">Capacitaciones</h6>
+      <h1 class="text-[44px] leading-[110%]">Cursos Online</h1>
+    </div>
+  </div>
+
+  <div class="bg-white p-[50px] text-center mx-900px">
+    <div
+      class="bg-black w-[62px] h-[2px] mx-[0] mb-[40px] mx-auto"
+      style="margin: 0 auto; margin-bottom: 30px"
+    ></div>
+    <p class="color-black text-[20px] leading-[160%] md:text-[15px]">
+      Hola Maestro, te presentamos los cursos gratuitos que podrás realizar para
+      completar tus conocimientos.
+      <br />Todo a tu disposición en el horario que mejor te acomode.
+    </p>
+  </div>
+  <div class="bg-black pb-[20px]">
+    <div class="contenedor content_form_search lg:flex">
+      <!-- <div class="descripcion">
+        <p>
+          Maestro, en esta sección encontrarás todas las capacitaciones en vivo
+          que hemos venido realizando con nuestras marcas de cemento. Podrás
+          verlas cuando lo necesites y repetirlas o compartirlas de manera
+          sencilla
+        </p>
+      </div> -->
+      <img
+        class="top-[-5px] sm:top-[-15px] mb-[10px] lg:w-full lg:top-0 lg:mb-0"
+        src="../../../../assets/img/cantera.png"
+        alt="cantera"/>
+      <div
+        class="lupa px-[40px] sm:px-[115px] lg:px-0 lg:w-[350px] lg:flex lg:items-end lg:ml-[-60px]">
+        <input
+          class="text-[#13120F] rounded-[10px] bg-white w-full py-[25px] px-[30px] text-[20px] md:text-lg outline-none
+           placeholder:text-[#13120F] lg:py-[17px] lg:px-[21px] lg:leading-[18px] lg:text-[14px]"
+          placeholder="Buscar curso"/>
+      </div>
+    </div>
+
+    <!-- LISTA DE CURSOS -->
+    <app-lista-cursos></app-lista-cursos>
+  </div>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,445 @@
+*{
+    font-family: 'silka-medium';
+}
+.bg_infografia{
+    background-image: url('../../../assets/img/banner-infografia.png');
+    filter: brightness(65%);
+}
+.title{
+    position: absolute;
+    top: 43%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    h6{
+        font-size: 16px;
+    }
+    h1{
+        //font-size: 35px;
+        font-size: 2rem;
+    }
+}
+/** CABEZERA **/
+.cabezera{
+    background: #FF0000;
+    height: 200px;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //padding-top: 40px;
+    //display: block;
+    .titulo{
+        color: white;
+        margin-top: -50px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 0px;
+    }
+}
+.arrow-down{ 
+    display: none; //phone
+}
+.arrow-end-container{ //phone
+    display: none;
+}
+.cuerpo{
+    height: 100%; 
+    padding-left: 20px; //phone
+    padding-right: 20px; //phone
+    overflow: hidden;
+    padding-bottom: 150px;
+    z-index: -1;
+}
+.linea-container{ 
+    display: none;
+}
+//1
+.question1, .question3{ 
+    margin-top: 40px;
+}
+.imagen-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.question1 img, .question2 img, .question3 img{ 
+    width: 270px;
+    height: 370px;
+    margin-bottom: 20px;
+}
+.question1 .contenido h3, 
+.question2 .contenido h3, 
+.question3 .contenido h3{ 
+    color: #FF0000;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: bold;
+    
+}
+.question1 .contenido p, .question3 .contenido p{ 
+    font-size: 22px;
+    margin-top: 25px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: black;
+}
+.question1 .contenido h3::before, 
+.question3 .contenido h3::before,
+.question2 .contenido h3::before{ 
+    content: " ";
+    display: block;
+    width: 55px;
+    height: 5px;
+    background: #FF0000;
+    margin-bottom: 20px;
+}
+//2
+.question2{
+    margin-top: 40px;
+    .pasos{
+        margin-top: 25px;
+    }.paso{
+        display: flex;
+        padding-bottom: 20px;
+        h3{
+            color: #FF0000;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        p{
+            font-size: 22px;
+            margin-top: 10px;
+            line-height: 1.2;
+            font-weight: normal;
+            color: black; 
+        }
+    }
+    .pasos img{
+        width: 90px;
+        height: 90px;
+        padding-right: 20px;
+    }
+}
+
+/** IMPORTANTE **/
+.importante{
+    //position: relative;
+    //background: #779FA5;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    .btn-matricula{
+        margin-top: 50px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 20px;
+        a{
+            width: 100%;
+        }
+    }
+}
+.importante .titulo{
+    color: #FF0000;
+    font-size: 55px;
+    line-height: 1.1;
+    font-weight: bold;
+    text-align: center;
+}
+.importante .bloque-1 i,
+.importante .bloque-2 i,
+.importante .bloque-3 i{
+    padding-top: 40px;
+    font-size: 2.5rem;
+    color: #FF0000;
+}
+.importante .bloque-1 p,
+.importante .bloque-2 p,
+.importante .bloque-3 p{
+    padding-top: 10px;
+    font-size: 20px;
+    line-height: 1.3;
+}
+@media (min-width: 640px){
+    .title{
+        top: 43%;
+        h1{
+            font-size: 2.5rem;
+        }
+    }
+    .arrow-down{
+        font-size: 2rem;
+        width: 68px;
+        height: 68px;
+    }
+    .arrow-down i{
+        margin-bottom: -1.4rem;
+    }
+}
+@media (min-width: 768px){
+    .cabezera{
+        display: flex;
+        .titulo{
+            margin-top: -20px;
+            font-size: 2.3rem;
+        }
+    }
+    .title{
+        top: 43%;
+        h1{
+            font-size: 2.8rem;
+        }
+    }
+    .questions{
+        display: grid;
+        //gap: 100px;
+    }
+    .question1,
+    .question3{
+        position: relative;
+        left: 50.5%;
+        .contenido{
+            width: 50%;
+            padding-left: 20px;
+            padding-right: 20px;
+            h3{
+                width: 50%;
+            }
+        }
+        .imagen-container{
+            display: flex;
+            align-items: flex-start;
+            justify-content: start;
+        }
+    }
+    .question2{
+        position: relative;
+        width: 50%;
+        .contenido h3{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .pasos{
+            padding-left: 20px;
+            padding-right: 50px;
+        }
+        .imagen-container{
+            display: flex;
+            align-items: flex-end;
+            justify-content: end;
+            padding-right: 3px;
+        }
+    }
+    .linea{
+        position: absolute;
+        background: #FF0000;
+        width: 8px;
+        height: 243%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+.arrow-end-container{
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    .arrow-end{
+        font-size: 5rem;
+        color: #FF0000;
+        display: block;
+        i{
+            display: block;
+            margin: 0.8rem auto;
+            margin-bottom: -4rem;
+        }
+}
+}
+.arrow-down{ 
+    font-size: 1.9rem;
+    display: block;
+    color: white;
+    background: #FF0000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: 5px solid white;
+    margin: 0 auto; 
+    margin-top: -40px;
+    i{
+        display: block;
+        margin: 0.3rem auto;
+        margin-bottom: -1.6rem;
+        margin-left: 11px;
+    }
+}
+
+//IMPORTANTE
+.importante{
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:"titulo titulo titulo" 
+                        "bloque-1 bloque-2 bloque-3"
+                        "matricula matricula matricula";
+    .btn-matricula{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        grid-area: matricula;
+        a{
+            width: 510px;
+            padding-top: 1.4rem;
+            padding-bottom: 1.4rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+}
+.importante .titulo{
+    grid-area: titulo;
+    font-size: 65px;
+    margin-top: 150px;
+}
+.importante .bloque-1{
+    grid-area: bloque-1;
+}
+.importante .bloque-2{
+    grid-area: bloque-2;
+}
+.importante .bloque-3{
+    grid-area: bloque-3;
+}
+.importante .bloque-1 i,
+.importante .bloque-2 i,
+.importante .bloque-3 i{
+    font-size: 2.5rem;
+    color: #FF0000;
+}
+.importante .bloque-1 p,
+.importante .bloque-2 p,
+.importante .bloque-3 p{
+    font-size: 22px;
+    line-height: 1.3;
+     padding-top: 30px;
+}
+} //fin 768
+
+@media(min-width: 950px){
+    .question1,
+    .question3{
+        left: 50.2%;
+    }
+}
+@media (min-width: 1100px){
+    .question1, .question3{
+        display: flex;
+        .contenido{
+            margin-top: 30px;
+            h3{
+                font-size: 40px;
+            }
+            p{
+                width: 50%;
+                font-size: 25px;
+            }
+        }
+    }
+    .question2{ 
+        .contenido{
+            display: grid;
+            grid-template-areas: "pregunta imagen";
+            .imagen-container{
+                display: block;
+                grid-area: imagen;
+            }
+            .pregunta{
+                grid-area: pregunta;
+                margin-left: 50%;
+            }
+        }
+        .pregunta-container{
+            width: auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .contenido h3,
+        .paso h3{
+            font-size: 40px;
+        }
+        .paso p{
+            font-size: 25px;
+        }
+        .pasos-container{
+           display: flex;
+           align-items: flex-end;
+           justify-content: flex-end;
+           .pasos{
+                width: 450px;
+                display: grid;
+                gap: 20px;
+            } 
+        }
+    }
+} 
+
+@media (min-width: 1280px){
+    .importante{
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 100px;
+        gap: 100px;
+    }
+    .importante .bloque-1 i,
+    .importante .bloque-2 i,
+    .importante .bloque-3 i{
+        padding-top: 0px;
+    }
+    .importante .titulo{
+        font-size: 80px;
+    }
+    .importante .bloque-1 p,
+    .importante .bloque-2 p,
+    .importante .bloque-3 p{
+        font-size: 25px;
+        line-height: 1.3;
+        padding-top: 30px;
+    }
+}
+@media (max-width: 436px){
+    // .cabezera{
+    //     .titulo{
+    //         color: white;
+    //         margin-top: -50px;
+    //         text-align: center;
+    //         font-size: 1.7rem;
+    //         font-weight: 400;
+    //         line-height: 1;
+    //         padding-left: 15px;
+    //         padding-right: 15px;
+    //         margin-top: 20px;
+    //     }
+    // }
+}
+@media (max-width: 397px){
+    .importante{
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+    .importante .titulo{
+        font-size: 35px;
+    }
+    
+}

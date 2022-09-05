@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+ <!-- Banner -->
+ <main *ngIf="mostrar">
+<div class="relative">  
+  <div class="banner bg_facebook_live bg-cover bg-no-repeat h-[330px] grid items-center"></div>
+    <div class="title text-center text-white">
+      <h6>Capacitaciones</h6>
+      <h1>Facebook Live</h1>
+    </div>
+  <img class="absolute top-[30px] left-[43px]" src="../../../../assets/icons/arrow-left.png" alt="flecha" />
+</div>
+
+<!-- End Banner -->
+<!-- Tabs -->
+<div class="bg-white w-full px-11 py-[45px]">
+ <div
+   class="w-full md:w-1/2 flex text-lg sm:text-[30px] md:text-base border-b-2 border-gray-400">
+   <button (click)="cambiar('live')" [ngClass]="{'color': live, 'border-b-4': live}"
+     class="w-1/2 md:w-1/3 lg:w-1/4 font-medium sm:border-b-8 md:border-b-4 pb-5 md:pb-4">
+     Facebook Live
+   </button>
+   <button (click)="cambiar('webinar')" [ngClass]="{'color': webinars, 'border-b-4': webinars}"
+     class="w-1/2 md:w-1/3 lg:w-1/4 font-medium pb-5 md:pb-4 sm:border-b-8 md:border-b-4 border-transparent">
+     Webinars
+   </button>
+ </div>
+</div>
+<!-- End Tabs -->
+
+<div class="bg-black pb-[20px]">
+  <div class="contenedor2 content_form_search lg:flex">
+    <div class="descripcion">
+      <p>
+        Maestro, en esta sección encontrarás todas las capacitaciones en vivo que hemos venido realizando con nuestras marcas de cemento. 
+        Podrás verlas cuando lo necesites y repetirlas o compartirlas de manera sencilla
+      </p>
+    </div>
+    <img class="top-[-5px] sm:top-[-15px] mb-[10px] lg:w-full lg:top-0 lg:mb-0" src="../../../../assets/img/cantera.png" alt="cantera">  
+    <div class="lupa px-[40px] sm:px-[115px] lg:px-0 lg:w-[350px] lg:flex lg:items-end lg:ml-[-60px]">
+        <input class="text-[#13120F] rounded-[10px] bg-white w-full py-[25px] px-[30px] text-[20px] md:text-lg outline-none placeholder:text-[#13120F]
+          lg:py-[17px] lg:px-[21px] lg:leading-[18px] lg:text-[14px]" placeholder="Buscar curso" />
+    </div>
+  </div>
+  
+  <!-- LISTA DE VIDEOS DE FACEBOOK-LIVE -->
+  <app-lista-facebook-live *ngIf="live"></app-lista-facebook-live>
+  
+  <app-webinars *ngIf="webinars" [items]="webinarsData"></app-webinars>
+</div>
+</main>
+
+<app-footer></app-footer>

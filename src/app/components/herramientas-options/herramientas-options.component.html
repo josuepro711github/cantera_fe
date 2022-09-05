@@ -1,0 +1,245 @@
+<div class="bg-black pb-[20px]">
+  <div class="content_form_search overflow-hidden lg:flex lg:pr-[50px]">
+    <img
+      class="relative w-full top-[-5px] sm:top-[-15px] mb-[10px] lg:w-full lg:top-0 lg:mb-0"
+      src="../../../assets/img/cantera.png"
+      alt="cantera"/>
+    <div
+      class="px-[40px] sm:px-[115px] lg:px-0 lg:w-[350px] lg:flex lg:items-end lg:ml-[-60px] lg:z-10"></div>
+  </div>
+  <div class="content-list solution">
+    <ul
+      class="list-course px-[40px] pt-[30px] grid grid-cols-1 lg:grid-cols-2 gap-[35px] xl:grid-cols-3 lg:gap-[50px]">
+      <li class="item-solution">
+        <div (click)="openHerramientas()"
+          class="pointer item-box flex p-[15px] sm:p-[30px] border-[1px] border-white border-solid items-center justify-between lg:block lg:p-[20px]">
+          <div class="flex items-center">
+            <img
+              class="w-[47px]"
+              src="../../../assets/svg/impuestos 1.svg"
+              alt="impuestos"/>
+            <p
+              class="item-title uppercase text-[20px] text-white ml-[20px] sm:ml-[50px] max-w-[330px] lg:ml-[20px] lg:text-[14px]">
+              CALCULADORA DE MATERIALES DE CONSTRUCCIÓN
+            </p>
+          </div>
+          <a>
+            <img
+              class="w-[27px] lg:mt-[20px] lg:ml-auto lg:mr-0 lg:w-[36px]"
+              src="../../../assets/icons/arrow-right.png"
+              alt="ver"/>
+          </a>
+        </div>
+        <div
+          class="description-item text-white text-[20px] mt-[27px] lg:text-[14px] leading-[160%] text-justify color">
+          <span class="collapsable float-left">
+            {{
+              info.length > firstCount ? (info | slice: 0:counter) + "..." : info
+            }}
+            <span
+              class="redTxt"
+              *ngIf="info.length > 100"
+              (click)="toggleSkil()">
+              {{ showTxt }}
+            </span>
+          </span>
+          <!--  Determina de una manera sencilla la cantidad adecuada de cemento,
+          agregados y agua que requerirá la mezcla de concreto para cada uno de
+          tus proyectos. Selecciona el tipo de construcción, ingresa tus datos y
+          obtén la proporción adecuada de cada material. -->
+        </div>
+      </li>
+      <li class="item-solution">
+        <div (click)="openPlanos()"
+          class="pointer item-box flex p-[15px] sm:p-[30px] border-[1px] border-white border-solid items-center justify-between lg:block lg:p-[20px]">
+          <div class="flex items-center">
+            <img
+              class="w-[47px]"
+              src="../../../assets/svg/plano 1.svg"
+              alt="impuestos"/>
+            <p 
+              class="item-title uppercase text-[20px] text-white ml-[20px] sm:ml-[50px] max-w-[330px] lg:ml-[20px] lg:text-[14px]">
+              PLANOS CASAS
+            </p>
+          </div>
+          <img
+            class="w-[27px] lg:mt-[20px] lg:ml-auto lg:mr-0 lg:w-[36px]"
+            src="../../../assets/icons/arrow-right.png"
+            alt="ver"/>
+        </div>
+        <div
+          class="description-item text-white text-[20px] mt-[27px] lg:text-[14px] leading-[160%] text-justify color">
+          <span class="collapsable float-left">
+            {{
+              info2.length > firstCount
+                ? (info2 | slice: 0:counter2) + "..."
+                : info2
+            }}
+            <span 
+              class="redTxt"
+              *ngIf="info2.length > 100"
+              (click)="toggleSkil2()"
+            >
+              {{ showTxt2 }}
+            </span>
+          </span>
+          <!--  Ponemos a tu alcance 3 planos de casas tipo con formatos de 1, 2 y 3
+          pisos*, los cuales tienen la característica de ser sismo resistentes.
+          En cada uno de estos planos encontrarás la... -->
+        </div>
+      </li>
+      <li class="item-solution">
+        <div
+          (click)="openPdf(manual_de_construccion)"
+          class="pointer item-box flex p-[15px] sm:p-[30px] border-[1px] border-white border-solid items-center justify-between lg:block lg:p-[20px]"
+        >
+          <div class="flex items-center">
+            <img
+              class="w-[47px]"
+              src="../../../assets/svg/manual 1.svg"
+              alt="impuestos"
+            />
+            <p
+              class="item-title uppercase text-[20px] text-white ml-[20px] sm:ml-[50px] max-w-[330px] lg:ml-[20px] lg:text-[14px]"
+            >
+              MANUAL DE CONSTRUCCION
+            </p>
+          </div>
+          <img
+            class="w-[27px] lg:mt-[20px] lg:ml-auto lg:mr-0 lg:w-[36px]"
+            src="../../../assets/icons/arrow-right.png"
+            alt="ver"
+          />
+        </div>
+        <div
+          class="description-item text-white text-[20px] mt-[27px] lg:text-[14px] leading-[160%] text-justify color"
+        >
+          <span class="collapsable float-left">
+            {{
+              info3.length > firstCount
+                ? (info3 | slice: 0:counter3) + "..."
+                : info3
+            }}
+            <span
+              class="redTxt"
+              *ngIf="info3.length > 100"
+              (click)="toggleSkil3()"
+            >
+              {{ showTxt3 }}
+            </span>
+          </span>
+
+          <!--     Te ofrecemos una guía completa de instrucciones y recomendaciones a
+          tomar en cuenta en cada etapa de la construcción de una edificación.
+          Desde el vaciado de concreto, la importancia... -->
+        </div>
+      </li>
+      <li class="item-solution">
+        <div
+          (click)="openPdf(tabla_de_equivalencias)"
+          class="pointer item-box flex p-[15px] sm:p-[30px] border-[1px] border-white border-solid items-center justify-between lg:block lg:p-[20px]"
+        >
+          <div class="flex items-center">
+            <img
+              class="w-[47px]"
+              src="../../../assets/svg/tabla 1.svg"
+              alt="impuestos"
+            />
+            <p
+              class="item-title uppercase text-[20px] text-white ml-[20px] sm:ml-[50px] max-w-[330px] lg:ml-[20px] lg:text-[14px]"
+            >
+              TABLA DE EQUIVALENCIAS Y DOSIFICACIÓN
+            </p>
+          </div>
+          <img
+            class="w-[27px] lg:mt-[20px] lg:ml-auto lg:mr-0 lg:w-[36px]"
+            src="../../../assets/icons/arrow-right.png"
+            alt="ver"
+          />
+        </div>
+        <div
+          class="description-item text-white text-[20px] mt-[27px] lg:text-[14px] leading-[160%] text-justify color"
+        >
+          <span class="collapsable float-left">
+            {{
+              info4.length > firstCount
+                ? (info4 | slice: 0:counter4) + "..."
+                : info4
+            }}
+            <span
+              class="redTxt"
+              *ngIf="info4.length > 100"
+              (click)="toggleSkil4()"
+            >
+              {{ showTxt4 }}
+            </span>
+          </span>
+
+          <!--   Conoce a través de esta Tabla de Equivalencias y Dosificaciones, las
+          cantidades y proporciones recomendadas de cada material para la
+          construcción de tu edificación... -->
+        </div>
+      </li>
+      <li class="item-solution">
+        <div
+          (click)="openPdf(manual_de_manejo)"
+          class="pointer item-box flex p-[15px] sm:p-[30px] border-[1px] border-white border-solid items-center justify-between lg:block lg:p-[20px]"
+        >
+          <div class="flex items-center">
+            <img
+              class="w-[47px]"
+              src="../../../assets/svg/informacion 1.svg"
+              alt="impuestos"
+            />
+            <p
+              class="item-title uppercase text-[20px] text-white ml-[20px] sm:ml-[50px] max-w-[330px] lg:ml-[20px] lg:text-[14px]"
+            >
+              MANUAL DE MANEJO, TRANSPORTE Y ALMACENAMIENTO DEL CEMENTO
+            </p>
+          </div>
+          <img
+            class="w-[27px] lg:mt-[20px] lg:ml-auto lg:mr-0 lg:w-[36px]"
+            src="../../../assets/icons/arrow-right.png"
+            alt="ver"
+          />
+        </div>
+        <div
+          class="description-item text-white text-[20px] mt-[27px] lg:text-[14px] leading-[160%] text-justify color"
+        >
+          <span class="collapsable float-left">
+            {{
+              info5.length > firstCount
+                ? (info5 | slice: 0:counter5) + "..."
+                : info5
+            }}
+            <span
+              class="redTxt"
+              *ngIf="info5.length > 100"
+              (click)="toggleSkil5()"
+            >
+              {{ showTxt5 }}
+            </span>
+          </span>
+
+          <!--   Entérate de todo lo que debes saber para el correcto traslado ​del
+          cemento, ​ su almacenamiento y manipulación... -->
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- <div *ngIf="videoTips == true" class="bg-black pb-[20px]">
+  <div class="content_form_search overflow-hidden lg:flex lg:pr-[50px]">
+    <img
+      class="relative w-full top-[-5px] sm:top-[-15px] mb-[10px] lg:w-full lg:top-0 lg:mb-0"
+      src="../../../assets/img/cantera.png"
+      alt="cantera"/>
+    <div
+      class="px-[40px] sm:px-[115px] lg:px-0 lg:w-[350px] lg:flex lg:items-end lg:ml-[-60px] lg:z-10">
+    </div>
+  </div>
+  <div class="content-list solution">
+  </div>
+</div> -->

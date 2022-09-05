@@ -1,0 +1,362 @@
+* {
+  font-family: "silka-medium";
+}
+/** PROBAR MOVIL **/
+.dsc-slider {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.48);
+  }
+  &__content {
+    text-align: center;
+    width: 100%;
+    align-self: stretch;
+    display: flex;
+    overflow: hidden;
+    button img {
+      width: 75%;
+    }
+    &-item {
+      float: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      min-width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      transition: 0.4s all ease-out;
+
+      //animation: fade 1.5s infinite alternate;
+    }
+  }
+  &__data {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s all ease-in;
+    h1 {
+      margin-left: 65px;
+      color: white;
+      font-weight: 400;
+      z-index: 1;
+      font-size: 50px;
+    }
+    h2 {
+      color: white;
+      margin-left: 65px;
+      font-size: 50px;
+      z-index: 1;
+    }
+    h3 {
+      margin-left: 65px;
+      z-index: 1;
+      color: white;
+      font-weight: 400px;
+      font-size: 30px;
+    }
+    p {
+      margin-left: 65px;
+      z-index: 1;
+      color: white;
+      font-weight: 350;
+      font-size: 20px;
+    }
+  }
+
+  &__btns {
+    position: absolute;
+    width: 93.7%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    .button1 {
+      display: flex;
+      margin-left: -60px;
+      cursor: pointer;
+    }
+    .button2 {
+      display: flex;
+      margin-right: -40px;
+      cursor: pointer;
+    }
+    .BG {
+      background: #000;
+      height: 60px;
+      width: 60px;
+      border-radius: 999px;
+      opacity: 0.5;
+    }
+    .button1 .btn1,
+    .button2 .btn2 {
+      color: white;
+      font-size: 40px;
+      margin-left: -40px;
+      z-index: 1;
+    }
+  }
+
+  &__steps {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 90px;
+    &-step {
+      height: 3px;
+      width: 40px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #000;
+      transition: 0.75s all ease-in-out;
+      &:hover,
+      &-active {
+        opacity: 1;
+        background: #fff;
+      }
+    }
+  }
+}
+.dsc-slider__data h1::before {
+  content: " ";
+  display: block;
+  width: 62px;
+  height: 2px;
+  background: white;
+  margin-bottom: 23px;
+}
+
+// Responsive movil
+@media (max-width: 1024px) {
+  .dsc-slider__data {
+    display: none;
+  }
+  .dsc-slider__data-movil {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .dsc-slider__data-movil h1 {
+    font-size: 40px;
+  }
+  .dsc-slider__data-movil h1::before {
+    content: " ";
+    display: block;
+    width: 62px;
+    height: 2px;
+    background: black;
+    margin-bottom: 23px;
+  }
+  .dsc-slider__data-movil .info h3 {
+    font-size: 30px;
+  }
+  .dsc-slider__data-movil .info p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dsc-slider__data-movil {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dsc-slider__data-movil {
+    display: none;
+  }
+}
+
+@mixin ratio($w, $h) {
+  display: grid;
+  grid-template-columns: repeat($w, 1fr);
+  grid-template-rows: repeat($h, 1fr);
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.video {
+  @include ratio(9, 9);
+  > iframe,
+  video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.carousel {
+  position: relative;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+  //margin-top: 26px;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+  position: static;
+  opacity: 100;
+}
+
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.carousel-control {
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+  height: 40px;
+  line-height: 35px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  cursor: pointer;
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  text-align: center;
+  width: 40px;
+  z-index: 10;
+}
+
+.carousel-control.prev {
+  left: 2%;
+}
+
+.carousel-control.next {
+  right: 2%;
+}
+
+.carousel-control:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.carousel-bullet {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 35px;
+}
+
+.carousel-bullet:hover {
+  color: #aaaaaa;
+}
+
+#carousel-1:checked
+  ~ .control-1
+  ~ .carousel-indicators
+  li:nth-child(1)
+  .carousel-bullet,
+#carousel-2:checked
+  ~ .control-2
+  ~ .carousel-indicators
+  li:nth-child(2)
+  .carousel-bullet,
+#carousel-3:checked
+  ~ .control-3
+  ~ .carousel-indicators
+  li:nth-child(3)
+  .carousel-bullet {
+  color: #428bca;
+}
+
+#title {
+  width: 100%;
+  position: absolute;
+  padding: 0px;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 27px;
+  color: rgba(255, 255, 255, 1);
+  font-family: "Open Sans", sans-serif;
+  z-index: 9999;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33),
+    -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+.logo_cantera_home{
+  width: 320px;
+  height: 70px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  img{
+    margin-top: 40px;
+  }
+}

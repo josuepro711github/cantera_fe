@@ -1,0 +1,46 @@
+*{
+    font-family: 'silka-medium';
+}
+.backgroud{
+    background: #FF0000;
+}
+.wsp_border{
+    position: relative;
+    background-image: url('../../../assets/svg/wsp_border.svg');
+    background-size: 57px;
+    background-position: center;
+    width: 57px;
+    height: 57px;
+}
+.wsp_tel{
+    position: absolute;  
+    background-image: url('../../../assets/svg/wsp_tel.svg');  
+    background-size: 28px;
+    background-position: center;
+    width: 28px;
+    height: 26px;
+    left: 24.5%;
+    top: 28%;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    .logo .unacem-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .unacem{
+            display: flex;
+        }
+    }
+}
+@media (min-width: 768px){
+    .logo-container{
+        display: flex;
+        align-items: flex-start;
+        justify-content: start;
+    }
+}

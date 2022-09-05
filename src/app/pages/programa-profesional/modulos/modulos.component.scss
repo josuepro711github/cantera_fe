@@ -1,0 +1,142 @@
+*{
+    font-family: 'silka-medium';
+}
+.bg_infografia{
+    background-image: url('../../../../assets/img/banner-infografia.png');
+    filter: brightness(65%);
+}
+.title{
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    h6{
+        font-size: 16px;
+    }
+    h1{
+        font-size: 2.8rem;
+    }
+}
+.contenedor3{
+    padding: 30px;
+}
+.modulos{
+    display: grid;
+    gap: 20px;
+}
+.modulos .header{
+    display: grid;
+    padding: 15px;
+    grid-template-columns: 100px 45% auto;
+    grid-template-areas: "nro-modulo duracion duracion"
+                    "pregunta pregunta pregunta";
+    .nro-modulo{
+        grid-area: nro-modulo;
+    }
+    .duracion{
+        grid-area: duracion;
+        display: flex;
+        justify-content: flex-start;
+    }  
+    .pregunta{
+        grid-area: pregunta;
+    }              
+}
+.modulos .body{
+    padding: 20px;
+    .tema{
+        font-size: 20px;
+    }
+    .tema::after{
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 1.5px;
+        background:black;
+        margin-top: 7px;
+        margin-bottom: 10px;
+    }
+}
+//INFO
+.info{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    display: grid;
+    gap: 30px;
+    h3{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    p{
+        font-weight: 500;
+    }
+    h3::after{
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 1.5px;
+        background:black;
+        margin-top: 7px;
+        margin-bottom: 10px;
+    }  
+}
+
+@media (max-width: 567px){
+    .title{
+        top: 30%;
+    }
+}
+
+@media (min-width: 768px){
+    .modulos{
+        display: grid;
+        grid-template-columns: 49.4% auto;
+        grid-template-areas: "header header"
+                              "body body";
+        .header{
+            grid-area: header;
+            grid-template-areas: "nro-modulo pregunta duracion";
+            .duracion{
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+    .info {
+        padding: 70px;
+    }
+}
+
+@media (min-width: 1024px){
+    .info {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-areas: "material duracion certificacion"
+                              "material evaluacion certificacion";
+        .material-programa{
+            grid-area: material;
+            margin-right: 90px;
+        }
+        .duracion2{
+            grid-area: duracion;
+        }
+        .evaluacion{
+            grid-area: evaluacion;
+        }
+        .certificacion{
+            grid-area: certificacion;
+            margin-left: 90px;
+        }                      
+    }
+}
+
+ul {
+    list-style: disc;
+}
